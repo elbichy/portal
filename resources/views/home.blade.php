@@ -13,16 +13,17 @@
 				<a href="/#formArea" id="signinlinkBtn" class="waves-effect red hide-on-med-and-down waves-light btn-large pulse" style="margin-left: 20px;">Start Application</a>
 
 				<!-- FOR MOBILE -->
-				<a href="#instruction" id="readinstruction" class="waves-effect light-blue darken-3 hide-on-large-only waves-light btn-small" style="margin-bottom: 10px;">Read Instruction</a>
-				<a href="#formArea" id="formButton" class="waves-effect red hide-on-large-only waves-light btn-small pulse">Start Application</a>
+				<a href="#instruction" id="readinstruction" class="waves-effect light-blue darken-3 hide-on-large-only waves-light btn-large col s12" style="margin-bottom: 10px;">Read Instruction</a>
+				<a href="#formArea" id="formButton" class="waves-effect red hide-on-large-only waves-light btn-large col s12">Start Application</a>
 			</div>
 			<div class="col s12 m4 l4">
-				<img src="{{ asset('storage/nscdclargelogo.png') }}" class="responsive-img hide-on-med-and-down" alt="logo">
+				<img src="{{ asset('storage/nscdclargelogo.png') }}" class="responsive-img" alt="logo">
 			</div>
 		</div>
 		<div class="contactSection">
 			<h4 class="container">
-				<i class="medium material-icons">mail_outline</i> SEND FEEDBACK TO: recruitment@nscdc.gov.ng
+				<i class="medium material-icons">mail_outline</i>
+				<p>SEND FEEDBACK TO: recruitment@nscdc.gov.ng</p>
 			</h4>
 		</div>
 	</div>
@@ -162,11 +163,11 @@
 								</button>
 							</div>
 						</div>
-						@if(env('GOOGLE_RECAPTCHA_KEY'))
+						
 							<div class="g-recaptcha"
 								data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
 							</div>
-						@endif
+						
 						<div>
 							<p class='center'>Forgot password? <a href="{{ route('password.request') }}">Reset password</a></p>
 						</div>

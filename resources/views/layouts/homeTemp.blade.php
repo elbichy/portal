@@ -50,9 +50,9 @@
 			<nav class="light-blue darken-4" style="height: 66px;">
 				<div class="nav-wrapper">
 					<!-- LOGO AREA HERE -->
-					<a href="#" class="brand-logo" style="height: 100%; display: flex; align-items: center; justify-content: center;"><img src="{{asset('storage/nscdclogo50.png')}}" class="responsive-image" alt="logo"> <p style="font-size: 16px; font-weight: bold; margin-left: 8px;" class="hide-on-med-and-down">Nigeria Security and Civil Defence Corps</p>
+					<a href="#" class="brand-logo hide-on-med-and-down" style="height: 100%; display: flex; align-items: center; justify-content: center;"><img src="{{asset('storage/nscdclogo50.png')}}" class="responsive-image" alt="logo"> <p style="font-size: 16px; font-weight: bold; margin-left: 8px;">Nigeria Security and Civil Defence Corps</p>
 					</a>
-					<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="small material-icons" style="font-size: 32px;">menu</i></a>
+					<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="small material-icons" style="font-size: 32px;">menu</i></a>
 					<!-- NAV AREA HERE -->
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="/#" id="home">Home</a></li>
@@ -63,8 +63,8 @@
 				</div>
 			</nav>
 
-			<ul class="sidenav" id="mobile-demo">
-				<li><a href="/#p">Home</a></li>
+			<ul class="sidenav" id="mobile-demo" style="z-index: 1;">
+				<li><a href="/#">Home</a></li>
 				<li><a href="/#instruction" id="howtoapply">How to apply</a></li>
 				<li><a class="waves-effect waves-light modal-trigger" href="#modal1">Contact us</a></li>
 				<li><a href="/#formArea" id="signinlink">Sign in</a></li>

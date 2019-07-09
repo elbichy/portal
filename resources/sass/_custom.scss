@@ -264,7 +264,9 @@ nav {
             .new {
                 padding-right: 60px;
             }
-            // .existing {}
+            .existing {
+                margin-top: 50px;
+            }
         }
     }
     .instruction {
@@ -569,6 +571,9 @@ nav {
     body {
         height: auto;
     }
+    .sidenav-overlay {
+        z-index: 1;
+    }
     .homeNav {
         background: transparent!important;
         background: none!important;
@@ -602,27 +607,182 @@ nav {
                 align-items: center;
                 border-radius: 50%;
             }
-            form {
-                .input-field {
-                    .select-wrapper {
-                        // border:2px solid #fff!important;
-                        margin: 0;
-                        input {
-                            border: none;
-                            margin: 0;
-                            color: #fff;
-                            text-align: center;
-                        }
-                        .caret {
-                            fill: #fff;
-                        }
+        }
+    }
+    // HOMEPAGE SPECIFIC STYLES HERE
+    .homeContentWrap {
+        .slider-area {
+            min-height: 91vh;
+            padding-top: 4vh;
+            position: relative;
+            margin-bottom: 0px!important;
+            .container {
+                div {
+                    p {
+                        padding: 10px 0;
+                        font-size: 16px;
+                    }
+                }
+                div:nth-child(2) {
+                    display: flex;
+                    justify-content: center;
+                    img {
+                        width: 30%;
+                    }
+                }
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .contactSection {
+                /* border: 2px solid red; */
+                width: 100%;
+                height: auto;
+                background: rgba(5, 58, 93, 0.8);
+                position: relative;
+                bottom: none;
+                display: flex;
+                align-items: center;
+                margin-top: 55px;
+                padding: 10px;
+                h4 {
+                    color: #fff;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    font-size: 20px;
+                    i {
+                        margin-right: 10px;
                     }
                 }
             }
         }
+        #formArea {
+            background: rgba(255, 255, 255, 0.8);
+            min-height: 100vh;
+            padding: 74px 0 32px 0;
+            .container {
+                div {
+                    p {
+                        margin-bottom: 20px;
+                    }
+                    #register_form>label,
+                    #signin_form>label {
+                        color: #666;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        font-size: 1.2rem;
+                        cursor: text;
+                        -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
+                        transition: color .2s ease-out, -webkit-transform .2s ease-out;
+                        transition: transform .2s ease-out, color .2s ease-out;
+                        transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+                        -webkit-transform-origin: 0% 100%;
+                        transform-origin: 0% 100%;
+                        text-align: initial;
+                        -webkit-transform: translateY(12px);
+                        transform: translateY(12px);
+                    }
+                    #regButt,
+                    #loginButt {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        height: 54px;
+                        line-height: 54px;
+                        font-size: 15px;
+                    }
+                    #signincard {
+                        padding: 30px 0 10px 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        .progress {
+                            position: absolute;
+                            top: 0;
+                            margin: 0;
+                            display: none;
+                        }
+                        #signin_form {
+                            width: 85%;
+                        }
+                    }
+                }
+                .new {
+                    padding-right: 0px;
+                }
+                // .existing {}
+            }
+        }
+        .instruction {
+            min-height: 100vh;
+            padding-top: 74px
+        }
+        #guide {
+            display: block;
+        }
+        .collapsible {
+            border: none;
+            box-shadow: none;
+        }
+        .active {
+            border: none;
+        }
+        .collapsible-header {
+            background-color: transparent;
+            border-bottom: 0px solid #ddd;
+            color: #fff;
+        }
+        .collapsible-body {
+            background: transparent;
+            color: #fff;
+            border: none;
+        }
     }
-    #notifications {
-        top: 56px!important;
+    .homeContentContainer {
+        width: 100%;
+        height: calc(100vh - 107px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .card {
+            width: 80%;
+            margin: 0;
+            .verifyWrap {
+                padding: 40px;
+                h5 {
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: 16px;
+                    text-align: left;
+                    display: block;
+                    margin-bottom: 10px;
+                }
+            }
+            .progress {
+                margin: 0;
+                display: none;
+            }
+            .row,
+            h5 {
+                margin: 0;
+            }
+            .row {
+                padding: 20px;
+            }
+            form {
+                .input-field {
+                    padding: 0;
+                }
+            }
+        }
+    }
+    .footer-copyright {
+        padding: 10px;
     }
     .wrapper {
         height: auto;
