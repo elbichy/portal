@@ -162,6 +162,11 @@
 								</button>
 							</div>
 						</div>
+						@if(env('GOOGLE_RECAPTCHA_KEY'))
+							<div class="g-recaptcha"
+								data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+							</div>
+						@endif
 						<div>
 							<p class='center'>Forgot password? <a href="{{ route('password.request') }}">Reset password</a></p>
 						</div>
