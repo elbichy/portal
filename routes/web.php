@@ -2,6 +2,7 @@
 use App\Rank;
 use App\Cadre;
 use App\State;
+use App\Lga;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +13,22 @@ use App\State;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/get-lgoo/{id}', function($id) {
+    $data = State::find($id)->lgas;
+    return response()->json($data);
+});
+
+Route::get('/get-lgor/{id}', function($id) {
+    $data = State::find($id)->lgas;
+    return response()->json($data);
+});
+
+Route::get('/get-ranks/{cadre}', function($cadre) {
+    $data = Cadre::find($cadre)->ranks;
+    return response()->json($data);
+});
+
+
 
 Route::get('/', 'HomeController@index')->name('home');
 

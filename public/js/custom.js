@@ -73,7 +73,7 @@ $(document).ready(function() {
     // GET RANKS IN A CADRE
     $('#cadre').change(function() {
         let cadreSelected = $(this).val();
-        axios.get(`${base_url}/api/v1/get-ranks/${cadreSelected}`)
+        axios.get(`${base_url}/get-ranks/${cadreSelected}`)
             .then(function(response) {
                 // console.log(response.data);
                 let ranks = response.data;
@@ -97,7 +97,7 @@ $(document).ready(function() {
     $('#soo').change(function() {
         let stateSelected = $(this).val();
         // GET ALL LOCAL GOVERNMENT AREAS IN NIGERIA
-        axios.get(`${base_url}/api/v1/get-lgoo/${stateSelected}`)
+        axios.get(`${base_url}/get-lgoo/${stateSelected}`)
             .then(function(response) {
                 // console.log(response.data);
                 let lgaArray = response.data;
@@ -119,7 +119,7 @@ $(document).ready(function() {
     $('#sor').change(function() {
         let stateSelected = $(this).val();
         // GET ALL LOCAL GOVERNMENT AREAS IN NIGERIA
-        axios.get(`${base_url}/api/v1/get-lgor/${stateSelected}`)
+        axios.get(`${base_url}/get-lgor/${stateSelected}`)
             .then(function(response) {
                 // console.log(response.data.data);
                 let lgaArray = response.data;
