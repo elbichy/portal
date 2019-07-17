@@ -1,0 +1,7 @@
+{
+    "cadres": [
+        { "superintendent": "Superintendent Cadre" },
+        { "inspectorate": "Inspectorate Cadre" },
+        { "corpsassistant": "Corps Assistant Cadre" }
+    ]
+}

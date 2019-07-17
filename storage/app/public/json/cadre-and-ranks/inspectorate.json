@@ -1,0 +1,11 @@
+{
+    "ranks": [{
+            "id": 3,
+            "ic": "Inspector of Corps (GL07)"
+        },
+        {
+            "id": 4,
+            "aic": "Assistant Inspector of Corps (GL06)"
+        }
+    ]
+}

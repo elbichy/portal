@@ -1,0 +1,12 @@
+<?php
+	$cadreANDranks = [
+		"INSPECTORATE" => [
+			"ASSISTANT INSPECTOR OF CORPS"
+		],
+		"CORPS ASSISTANT" => [
+			"CORPS ASSISTANT I",
+			"CORPS ASSISTANT II",
+			"CORPS ASSISTANT III"
+		]
+	]
+?>

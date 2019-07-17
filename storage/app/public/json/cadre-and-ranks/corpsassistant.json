@@ -1,0 +1,15 @@
+{
+    "ranks": [{
+            "id": 5,
+            "cai": "Corps Assistant I (GL05)"
+        },
+        {
+            "id": 6,
+            "caii": "Corps Assistant II (GL04)"
+        },
+        {
+            "id": 7,
+            "caiii": "Corps Assistant III (GL03)"
+        }
+    ]
+}
