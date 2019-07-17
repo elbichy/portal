@@ -16,6 +16,7 @@
         "league/flysystem-aws-s3-v3": "^1.0",
         "riskihajar/terbilang": "^1.2",
         "skydiver/laravel-materialize-css": "dev-master",
+        "yajra/laravel-datatables": "1.5",
         "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {

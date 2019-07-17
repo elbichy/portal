@@ -4,21 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'NSCDC Recruitment Portal') }}</title>
+    <title>
+        {{ config('app.name', 'NSCDC Recruitment Portal') }}@isset($title) - {{ $title }}@endisset
+    </title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    {!! MaterializeCSS::include_css() !!}
-    
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
-    <script src="{{asset('js/lately.js')}}"></script>
-    <script src="{{asset('js/pace.min.js')}}"></script>
-    <script src="{{asset('js/ion.sound.min.js')}}"></script>
     <script src="{{asset('js/wnoty.js')}}"></script>
-    <script src="{{asset('js/moment.js')}}"></script>
-    <script src="{{asset('js/moment-timezone-with-data-1970-2030.js')}}"></script>
-    <script src="{{asset('js/livestamp.min.js')}}"></script>
+    <script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.11/js/dataTables.checkboxes.min.js"></script>
     {!! MaterializeCSS::include_js() !!}
+    {!! MaterializeCSS::include_css() !!}
     <script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
 
     <style>
@@ -41,7 +45,10 @@
             --button-secondary: #8d1003;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="{{asset('css/wnoty.css')}}">
+    <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.11/css/dataTables.checkboxes.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
@@ -57,7 +64,10 @@
                         @else
                             <a href="/administrator" class="breadcrumb">Administrator</a>
                         @endif
-                        <a href="/applicant/{{request()->segment(2)}}" class="breadcrumb">{{(request()->segment(2) == '') ? 'Dashbord' : ucfirst(request()->segment(2))}}</a>
+                            <a href="/{{request()->segment(1)}}/{{request()->segment(2)}}" class="breadcrumb">{{(request()->segment(2) == '') ? 'Dashbord' : ucfirst(request()->segment(2))}}</a>
+                        @if(request()->segment(3) != '')
+                            <a href="/{{request()->segment(1)}}/{{ request()->segment(2) }}/{{request()->segment(3)}}" class="breadcrumb">{{ strtoupper(request()->segment(3)) }}</a>
+                        @endif
                     </div>
 
                     {{-- OTHER MENU RIGHT --}}
@@ -170,8 +180,28 @@
                 <li class="{{(request()->segment(1) == 'administrator' && request()->segment(2) == NULL) ? 'active' : ''}}">
                     <a href="/administrator"><i class="material-icons">dashboard</i>DASHBOARD</a>
                 </li>
-                <li class="{{(request()->segment(2) == 'applicants') ? 'active' : ''}}">
-                    <a href="/administrator/applicants"><i class="material-icons">people</i>APPLICANTS</a>
+                <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                    <li class="{{ (request()->segment(2) == 'applicants') ? 'active' : ((request()->segment(2) == 'applicants') ? 'active' : ((request()->segment(2) == 'applicants') ? 'active' : ''))}}">
+                        <a style="padding:0 32px;" class="collapsible-header">
+                            <i class="material-icons">people</i>APPLICANTS<i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li class="{{(request()->segment(3) == 'gl-09') ? 'active' : ''}}"><a href="/administrator/applicants/gl-09"> Grade Level 09 (ASC I) </a></li>
+                                <li class="{{(request()->segment(3) == 'gl-08') ? 'active' : ''}}"><a href="/administrator/applicants/gl-08"> Grade Level 08 (ASC II) </a></li>
+                                <li class="{{(request()->segment(3) == 'gl-07') ? 'active' : ''}}"><a href="/administrator/applicants/gl-07"> Grade Level 07 (IC) </a></li>
+                                <li class="{{(request()->segment(3) == 'gl-06') ? 'active' : ''}}"><a href="/administrator/applicants/gl-06"> Grade Level 06 (AIC) </a></li>
+                                <li class="{{(request()->segment(3) == 'gl-05') ? 'active' : ''}}"><a href="/administrator/applicants/gl-05"> Grade Level 05 (CA I) </a></li>
+                                <li class="{{(request()->segment(3) == 'gl-04') ? 'active' : ''}}"><a href="/administrator/applicants/gl-04"> Grade Level 04 (CA II) </a></li>
+                                <li class="{{(request()->segment(3) == 'gl-03') ? 'active' : ''}}"><a href="/administrator/applicants/gl-03"> Grade Level 03 (CA III) </a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    </ul>
+                </li>
+                <li class="{{  (request()->segment(2) == 'shortlisted') ? 'active' : '' }}">
+                    <a href="/administrator/shortlisted/"><i class="material-icons">done_all</i>SHORTLISTED</a>
                 </li>
             @endcan
                 {{-- OTHER MENU RIGHT FOR MOBILE DEVICES --}}
@@ -245,5 +275,7 @@
     <script>
         let base_url = '{{ asset('/') }}';
     </script>
+    @stack('scripts')
+    
 </body>
 </html>

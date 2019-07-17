@@ -9,9 +9,11 @@ class Contact extends Model
     protected $fillable = [
         'user_id',
         'soo',
+        'soon',
         'lga',
         'aoo',
         'sor',
+        'sorn',
         'lgor',
         'aor'
     ];
@@ -19,4 +21,10 @@ class Contact extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+
+    public function getSoonAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
 }

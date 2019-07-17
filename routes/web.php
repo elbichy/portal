@@ -1,6 +1,7 @@
 <?php
 use App\Rank;
 use App\Cadre;
+use App\State;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -102,11 +103,50 @@ Route::middleware(['checkSubmitted'])->group(function () {
 	Route::get('/applicant/review', 'ReviewDataController@index')->name('showReview')->middleware('checkCompleted');
 	Route::post('/applicant/review/submit-application', 'ReviewDataController@store')->name('submitApplication');
 
-
-	// ADMIN PROCESSES GOES HERE
-	Route::get('/administrator', 'AdminController@dashboard')->name('adminDashboard')->middleware('checkAdmin');
-	Route::get('/administrator/applicants', 'AdminController@applicants')->name('applicants')->middleware('checkAdmin');
-
-
-
 });
+
+
+// ADMIN PROCESSES GOES HERE
+Route::post('administrator/applicants/shortListApplicants', 'AdminController@shortListApplicants')->name('shortListApplicants')->middleware('checkAdmin');
+Route::get('/administrator', 'AdminController@dashboard')->name('adminDashboard')->middleware('checkAdmin');
+
+Route::get('/administrator/applicants/gl-09', 'AdminController@showASCI')->name('showASCI')->middleware('checkAdmin');
+Route::get('/administrator/applicants/gl-09/getData', 'AdminController@getASCI')->name('getASCI')->middleware('checkAdmin');
+
+
+Route::get('/administrator/applicants/gl-08', 'AdminController@showASCII')->name('showASCII')->middleware('checkAdmin');
+Route::get('/administrator/applicants/gl-08/getData', 'AdminController@getASCII')->name('getASCII')->middleware('checkAdmin');
+
+
+Route::get('/administrator/applicants/gl-07', 'AdminController@showIC')->name('showIC')->middleware('checkAdmin');
+Route::get('/administrator/applicants/gl-07/getData', 'AdminController@getIC')->name('getIC')->middleware('checkAdmin');
+
+
+Route::get('/administrator/applicants/gl-06', 'AdminController@showAIC')->name('showAIC')->middleware('checkAdmin');
+Route::get('/administrator/applicants/gl-06/getData', 'AdminController@getAIC')->name('getAIC')->middleware('checkAdmin');
+
+
+Route::get('/administrator/applicants/gl-05', 'AdminController@showCAI')->name('showCAI')->middleware('checkAdmin');
+Route::get('/administrator/applicants/gl-05/getData', 'AdminController@getCAI')->name('getCAI')->middleware('checkAdmin');
+
+
+Route::get('/administrator/applicants/gl-04', 'AdminController@showCAII')->name('showCAII')->middleware('checkAdmin');
+Route::get('/administrator/applicants/gl-04/getData', 'AdminController@getCAII')->name('getCAII')->middleware('checkAdmin');
+
+
+Route::get('/administrator/applicants/gl-03', 'AdminController@showCAIII')->name('showCAIII')->middleware('checkAdmin');
+Route::get('/administrator/applicants/gl-03/getData', 'AdminController@getCAIII')->name('getCAIII')->middleware('checkAdmin');
+
+
+Route::get('/administrator/shortlisted', 'AdminController@showShortlisted')->name('showShortlisted')->middleware('checkAdmin');
+Route::get('/administrator/shortlisted/getData', 'AdminController@getShortlisted')->name('getShortlisted')->middleware('checkAdmin');
+
+// Route::get('administrator/getstates', function () {
+// 	$states = State::all();
+// 	$state_array = [];
+// 	foreach($states as $state){
+// 		// array_push($state_array, ucwords($state['state_name']));
+// 		echo "'".ucwords($state['state_name'])."',";
+// 	}
+// 	// print_r($state_array);
+// });

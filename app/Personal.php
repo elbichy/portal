@@ -19,4 +19,9 @@ class Personal extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+
+    public function getGenderAttribute($value)
+    {
+        return ucfirst($value);
+    }
 }

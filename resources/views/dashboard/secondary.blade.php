@@ -44,7 +44,7 @@
                         </table>
                     </div>
                     <form class="row secForm col s12" name="secForm" id="secForm">
-                        <h6 class="customH62">Add a record</h6>
+                        <h6 class="customH62">Add school(s) record</h6>
                         @csrf
                         <div class="input-field col s12 l3">
                             <select id="certType" name="certType" class="browser-default" required>

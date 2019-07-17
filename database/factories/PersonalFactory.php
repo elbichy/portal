@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\User;
+use App\Personal;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -16,10 +17,10 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) 
+$factory->define(Personal::class, function (Faker $faker) 
 {
-    $start_date = '2019-06-01 00:00:00';
-    $end_date = '2019-07-01 00:00:00';
+    $start_date = '1985-01-01 00:00:00';
+    $end_date = '1995-01-01 00:00:00';
 
     $min = strtotime($start_date);
     $max = strtotime($end_date);
@@ -29,22 +30,13 @@ $factory->define(User::class, function (Faker $faker)
 
     // Convert back to desired date format
     $date = new DateTime(date('Y-m-d H:i:s', $val));
-    
+
     $gender = $faker->randomElement(['male', 'female']);
     return [
-        'firstname' => $faker->firstName($gender),
-        'lastname' => $faker->lastName($gender),
-        'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => Hash::make('@Suleimanu1'), // password
-        'remember_token' => Str::random(10),
-        'phone' => '080'.$faker->shuffle('50811702'),
-        'cadre_id' => $faker->numberBetween($min = 1, $max = 3),
-        'rank_id' => $faker->numberBetween($min = 1, $max = 7),
-        'gl' => $faker->numberBetween($min = 3, $max = 9),
-        'hasSubmitted' => 1,
-        'isAdmin' => 0,
-        'isShortlisted' => 0,
-        'created_at' => $date
+        'othername' => $faker->firstName($gender),
+        'gender' => $gender,
+        'dob' => $date,
+        'tribe' => $faker->randomElement(['hausa', 'igbo', 'yoruba']),
+        'religion' => $faker->randomElement(['christianity', 'islam', 'other'])
     ];
 });

@@ -65,13 +65,18 @@ class ContactDataController extends Controller
             'aor' => 'required'
         ]);
         
+        $soon = State::findOrfail($request->soo)->state_name;
+        $sorn = State::findOrfail($request->sor)->state_name;
+
         $contact = Contact::updateOrCreate(
             ['user_id' => auth()->user()->id],
             [
                 'soo' => $request->soo,
+                'soon' => $soon,
                 'lga' => $request->lga,
                 'aoo' => $request->aoo,
                 'sor' => $request->sor,
+                'sorn' => $sorn,
                 'lgor' => $request->lgor,
                 'aor' => $request->aor
             ]

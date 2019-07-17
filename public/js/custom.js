@@ -8,6 +8,8 @@ $(document).ready(function() {
         dismissible: true
     });
 
+
+
     $('.materialboxed').materialbox();
     $('select').formSelect();
     $('#selectBranch').formSelect();
@@ -578,3 +580,42 @@ function deleteExperience(e) {
             });
     }
 }
+
+
+////////////////////////////////// ADMINISTRATIVE CONTROLS GOES HERE //////////////////////////////////
+
+
+$(document).on('change', '.selectAll', function() {
+    if (this.checked) {
+        $('.applicantCheckbox').attr('checked', true);
+    } else {
+        $('.applicantCheckbox').attr('checked', false);
+    }
+});
+
+
+$(document).on('click', '#shortlistBtn', function() {
+    let id = [];
+    if (confirm('Are you sure you want to shortlist the selected candidate(s)?')) {
+        $('.applicantCheckbox:checked').each(function() {
+            id.push($(this).val())
+        });
+        if (id.length > 0) {
+            // console.log(id);
+            axios.post(`/administrator/applicants/shortListApplicants`, { applicants: id })
+                .then(function(response) {
+                    // console.log(response);
+                    if (response.data.status) {
+                        $.wnoty({
+                            type: 'success',
+                            message: response.data.message,
+                            autohideDelay: 5000
+                        });
+                        $('#users-table').DataTable().ajax.reload();
+                    }
+                });
+        } else {
+            alert('You must select at least one candidate!');
+        }
+    }
+});

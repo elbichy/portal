@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Rank;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -71,6 +72,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         //  dd($data);
+        $gl = Rank::find($data['rank'])->gl;
         return User::create([
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
@@ -79,6 +81,7 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'cadre_id' => $data['cadre'],
             'rank_id' => $data['rank'],
+            'gl' => $gl,
         ]);
     }
 }

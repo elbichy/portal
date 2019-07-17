@@ -17,9 +17,11 @@ class CreateContactsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->string('soo')->nullable();
+            $table->string('soon')->nullable();
             $table->string('lga')->nullable();
             $table->string('aoo')->nullable();
             $table->string('sor')->nullable();
+            $table->string('sorn')->nullable();
             $table->string('lgor')->nullable();
             $table->string('aor')->nullable();
             $table->timestamps();

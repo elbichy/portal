@@ -29,12 +29,19 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'firstname',
         'lastname',
+        'gender',
         'email',
         'password',
         'phone',
         'cadre_id',
         'rank_id',
-        'image'
+        'image',
+        'soon',
+        'sorn',
+        'appNum',
+        'hasSubmitted',
+        'isAdmin',
+        'isShortlisted'
     ];
 
     /**
@@ -98,4 +105,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function rank(){
         return $this->belongsTo('App\Rank');
     }
+
+    public function getGenderAttribute($value)
+    {
+        return ucfirst($value);
+    }
+    
 }

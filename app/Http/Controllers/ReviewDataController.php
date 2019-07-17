@@ -47,14 +47,14 @@ class ReviewDataController extends Controller
      */
     public function store(Request $request)
     {
-        $state = State::find(auth()->user()->contact->soo)->state_name;
-        $state = substr($state, 0, 3);
-        $state = strtoupper($state);
+        $stateAbr = State::find(auth()->user()->contact->soo)->state_name;
+        $stateAbr = substr($stateAbr, 0, 3);
+        $stateAbr = strtoupper($stateAbr);
         
         if($request->certify == 'on'){
             $user = User::find(auth()->user()->id);
+            $user->appNum = 'NSCDC/REC/2019/'.auth()->user()->rank->acronym.'/'.$stateAbr.'/'.auth()->user()->id;
             $user->hasSubmitted = 1;
-            $user->appNum = 'NSCDC/REC/2019/'.auth()->user()->rank->acronym.'/'.$state.'/'.auth()->user()->id;
             if($user->save()){
                 return redirect()->route('applicant')->with(['success' => 'You have successfully completed your application']);
             }

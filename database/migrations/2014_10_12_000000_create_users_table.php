@@ -24,10 +24,12 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('cadre_id');
             $table->string('rank_id');
+            $table->string('gl')->nullable();
             $table->string('image')->nullable();
             $table->string('appNum')->nullable();
             $table->boolean('hasSubmitted')->default(0);
             $table->boolean('isAdmin')->default(0);
+            $table->boolean('isShortlisted')->default(0);
             $table->timestamps();
         });
     }
