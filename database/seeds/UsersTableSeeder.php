@@ -54,7 +54,7 @@ class UsersTableSeeder extends Seeder
             'isAdmin' => 1,
             'isShortlisted' => 0
         ]);
-        factory(App\User::class, 5000)
+        factory(App\User::class, 1000)
         ->create()
         ->each(function ($user) {
             $user->personal()->save(factory(App\Personal::class)->make());
