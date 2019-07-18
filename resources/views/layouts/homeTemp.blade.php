@@ -10,14 +10,7 @@
 	<script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
-    <script src="{{asset('js/lately.js')}}"></script>
-    <script src="{{asset('js/pace.min.js')}}"></script>
-    <script src="{{asset('js/ion.sound.min.js')}}"></script>
     <script src="{{asset('js/wnoty.js')}}"></script>
-    <script src="{{asset('js/moment.js')}}"></script>
-    <script src="{{asset('js/moment-timezone-with-data-1970-2030.js')}}"></script>
-	<script src="{{asset('js/livestamp.min.js')}}"></script>
-	<script src='https://www.google.com/recaptcha/api.js'></script>
     {!! MaterializeCSS::include_js() !!}
     <script src="{{asset('js/custom.js')}}"></script>
     {!! MaterializeCSS::include_css() !!}
