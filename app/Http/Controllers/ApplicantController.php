@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\User;
 use App\State;
 class ApplicantController extends Controller
@@ -47,12 +48,18 @@ class ApplicantController extends Controller
             $val = $request->validate([
                 'image' => 'required|image|mimes:jpeg,png,jpg,|max:80',
             ]);
+
             $passport = 'passport_'.auth()->user()->id.'.'.$image->getClientOriginalExtension();
-            $image->storeAs('public/applicants/'.auth()->user()->id, $passport);
-            
+            // $image->storeAs('public/applicants/'.auth()->user()->id, $passport);
+
+            $path = $image->storeAs(
+                'avatars', $passport, 's3'
+            );
+            $url = Storage::disk('s3')->url($path);
+        
         }
         $user = User::find(auth()->user()->id);
-        $user->image = $passport;
+        $user->image = $url;
         if($user->save()){
             return redirect()->route('showPersonal')->with(['success' => 'Image uploaded successfully!']);
         }else{

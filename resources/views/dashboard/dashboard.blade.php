@@ -23,7 +23,8 @@
                     @endcan
                     <div class="display-and-form-wrap row col s12">
                         <div style="padding:0;">
-                            <div class="imgWrap col s10 l10"><img src="{{ auth()->user()->image != NULL ? asset('storage/applicants').'/'.auth()->user()->id.'/'.auth()->user()->image : 'http://localhost/recruitment/assets/passports/default.png'}}" alt="Passport photograph" class="responsive-img"></div>
+                            <div class="imgWrap col s10 l10">
+                                <img src="{{ auth()->user()->image != NULL ? auth()->user()->image : 'https://nscdc-portal-bucket.s3.eu-west-2.amazonaws.com/avatars/default.jpg'}}" alt="Passport photograph" class="responsive-img"></div>
                         </div>
 
                         @if(auth()->user()->image == NULL)
