@@ -9,15 +9,8 @@
     {!! MaterializeCSS::include_css() !!}
     
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{asset('js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
-    <script src="{{asset('js/lately.js')}}"></script>
-    <script src="{{asset('js/pace.min.js')}}"></script>
-    <script src="{{asset('js/ion.sound.min.js')}}"></script>
     <script src="{{asset('js/wnoty.js')}}"></script>
-    <script src="{{asset('js/moment.js')}}"></script>
-    <script src="{{asset('js/moment-timezone-with-data-1970-2030.js')}}"></script>
-    <script src="{{asset('js/livestamp.min.js')}}"></script>
     {!! MaterializeCSS::include_js() !!}
     <script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
 

@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>{{ config('app.name', 'NSCDC Recruitment Portal') }}</title>
 	<script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{asset('js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
     <script src="{{asset('js/wnoty.js')}}"></script>
     {!! MaterializeCSS::include_js() !!}
