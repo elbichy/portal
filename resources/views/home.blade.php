@@ -102,7 +102,16 @@
 						<label for="confirm_password">Confirm Password</label>
 					</div>
 					<div class="col s12">
-						<button id="regButt" class="btn left waves-effect light-blue darken-3 waves-light" type="submit">Register
+						<div class="left">
+							@if ($errors->has('g-recaptcha-response'))
+								<span class="helper-text red-text">
+									<strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+								</span>
+							@endif
+							{!! htmlFormSnippet() !!}
+						</div>
+
+						<button id="regButt" class="btn right waves-effect light-blue darken-3 waves-light" type="submit">Register
 							<i class="material-icons right">send</i>
 						</button>
 						<div class="col s4 right">
@@ -148,6 +157,15 @@
 							<input id="login_password" name="password" type="password" class="" required>
 							<label for="login_password">Password</label>
 						</div>
+						<div class="col s12">
+							@if ($errors->has('g-recaptcha-response'))
+								<span class="helper-text red-text">
+									<strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+								</span>
+							@endif
+							{!! htmlFormSnippet() !!}
+						</div>
+						
 						<div class="row">
 							<div class="input-field col s12 l6">
 								<p style="margin:0;">
@@ -163,11 +181,6 @@
 								</button>
 							</div>
 						</div>
-						
-							<div class="g-recaptcha"
-								data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
-							</div>
-						
 						<div>
 							<p class='center'>Forgot password? <a href="{{ route('password.request') }}">Reset password</a></p>
 						</div>

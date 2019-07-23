@@ -33,7 +33,8 @@
         }
     </style>
     <link rel="stylesheet" href="{{asset('css/wnoty.css')}}">
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+	<link rel="stylesheet" href="{{asset('css/app.css')}}">
+	{!! htmlScriptTagJsApi(/* $formId - INVISIBLE version only */) !!}
 </head>
 <body>
     <!-- HEADER AREA -->

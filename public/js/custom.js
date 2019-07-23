@@ -56,8 +56,10 @@ $(document).ready(function() {
 
 
     $('#register_form').submit(function() {
-        $('#regButt').prop('disabled', true);
-        $('.preloader-wrapper').fadeIn();
+        $('#regButt').fadeOut(function() {
+            $('.preloader-wrapper').fadeIn();
+        });
+
     });
 
     $('#signin_form').submit(function() {
