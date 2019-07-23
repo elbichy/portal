@@ -260,7 +260,7 @@ nav .logOutBtn a i {
 }
 
 .homeContentWrap #formArea .container .existing {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .homeContentWrap .instruction {
@@ -1065,6 +1065,10 @@ nav .logOutBtn a i {
 
   .homeContentWrap #formArea .container .new {
     padding-right: 0px;
+  }
+
+  .homeContentWrap #formArea .container .existing {
+    margin-top: 50px;
   }
 
   .homeContentWrap .instruction {

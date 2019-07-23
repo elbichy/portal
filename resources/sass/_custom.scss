@@ -265,7 +265,7 @@ nav {
                 padding-right: 60px;
             }
             .existing {
-                margin-top: 50px;
+                margin-top: 0px;
             }
         }
     }
@@ -963,7 +963,9 @@ nav {
                 .new {
                     padding-right: 0px;
                 }
-                // .existing {}
+                .existing {
+                    margin-top: 50px;
+                }
             }
         }
         .instruction {
