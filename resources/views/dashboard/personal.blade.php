@@ -75,7 +75,7 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="input-field col s3">
+                            <div class="input-field col s12 l3">
                                 <select name="religion" id="religion" class=" browser-default" required>
                                     <option disabled selected>Religion</option>
                                     <option value="christianity" {{ auth()->user()->personal == NULL ? '' : auth()->user()->personal->religion == 'christianity' ? 'selected' : '' }}>Christianity</option>

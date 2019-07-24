@@ -195,7 +195,7 @@
                 </li>
             @endcan
                 {{-- OTHER MENU RIGHT FOR MOBILE DEVICES --}}
-                <li class="hide-on-med-and-up col s12" style="border-top:2px solid darkblue; justify-self: flex-end; margin-top: auto;">
+                <li class="hide-on-med-and-up col s12" style="border-top:1px solid rgba(0,0,0, 0.3); justify-self: flex-end; margin-top: auto;">
                     <ul class="right col s8" style="display:flex; justify-content:center; align-items:center; width:20%;">
                         <li class="logOutBtn">
                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

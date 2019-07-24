@@ -45,7 +45,7 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="input-field col s2">
+                            <div class="input-field col s12 l2">
                                 <input type="number" id="height" name="height" class="validate" value="{{ auth()->user()->medical == NULL ? '' : auth()->user()->medical->height }}" required>
                                 @if ($errors->has('height'))
                                     <span class="helper-text red-text">
@@ -54,7 +54,7 @@
                                 @endif
                                 <label for="height">Height (cm)</label>
                             </div>
-                            <div class="input-field col s2">
+                            <div class="input-field col s12 l2">
                                 <input type="number" id="weight" name="weight" class="validate" value="{{ auth()->user()->medical == NULL ? '' : auth()->user()->medical->weight }}" required>
                                 @if ($errors->has('weight'))
                                     <span class="helper-text red-text">
@@ -63,7 +63,7 @@
                                 @endif
                                 <label for="weight">Weight (kg)</label>
                             </div>
-                            <div class="input-field col s2">
+                            <div class="input-field col s12 l2">
                                 <input type="number" id="chestWidth" name="chestWidth" class="validate" value="{{ auth()->user()->medical == NULL ? '' : auth()->user()->medical->chestWidth }}" required>
                                 @if ($errors->has('chestWidth'))
                                     <span class="helper-text red-text">

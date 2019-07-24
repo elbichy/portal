@@ -10,7 +10,7 @@
                 {{-- SALES TABLE --}}
                 <div class="sectionFormWrap z-depth-1">
                     <div class="row col s12">
-                        <p class="formMsg blue lighten-5 justify">NOTE: (COMPULSORY SECTION) - Make sure you add all neccessary Secondary school level credentials. Fill form below and click the green 'ADD' button to add each record, then click the 'PROCEED' button to go to the next section</p>
+                        <p class="formMsg blue lighten-5 justify">NOTE: (COMPULSORY SECTION) - Make sure to add your Secondary school credentials by filling the form below and clicking the green 'ADD' button to add each record, then click the 'PROCEED' button to go to the next section</p>
                         <h6 class="customH61">Secondary school qualification records</h6>
                         <table class="responsive-table striped">
                             <thead>
@@ -51,8 +51,9 @@
                                 <option disabled="" disabled selected>Qualification</option>
                                 <option value="waec">SSCE(waec)</option>
                                 <option value="neco">SSCE(neco)</option>
+                                <option value="gce-waec">GCE(waec)</option>
+                                <option value="gce-neco">GCE(neco)</option>
                                 <option value="nabteb">NABTEB</option>
-                                <option value="gce">GCE</option>
                             </select>
                             @if ($errors->has('certType'))
                                 <span class="helper-text red-text">
@@ -104,7 +105,7 @@
                         <div class="input-field col s12 l2">
                             <button class="btn waves-effect waves-light green darken-1 left addSec" type="submit" name="action"><i class="material-icons right">add</i> ADD</button>
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 l6">
                             <a href="{{ route('showTertiary') }}" class="secondaryProceed btn waves-effect waves-light right float secSave" {{ count(auth()->user()->secondary) == 0 ? 'disabled' : ''}}>PROCEED</a>
                         </div>
                     </form>

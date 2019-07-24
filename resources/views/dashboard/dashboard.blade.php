@@ -23,7 +23,7 @@
                     @endcan
                     <div class="display-and-form-wrap row col s12">
                         <div style="padding:0;">
-                            <div class="imgWrap col s10 l10">
+                            <div class="imgWrap col s12 l10">
                                 <img src="{{ auth()->user()->image != NULL ? auth()->user()->image : 'https://nscdc-portal-bucket.s3.eu-west-2.amazonaws.com/avatars/default.jpg'}}" alt="Passport photograph" class="responsive-img"></div>
                         </div>
 
@@ -31,7 +31,7 @@
                             <form action="{{ route('storeImage') }}" method="POST" class="imageUploadForm col s12 l9" enctype="multipart/form-data" style="padding:0;">
                                 @csrf
                                 <h6 class="customH62">Upload your passport photograph</h6>
-                                <div class="row col s12">
+                                <div class="col s12">
                                     <blockquote>
                                         (Accepted Max file size is 80KB and supported formats are JPEG, PNG, GIF)
                                     </blockquote>
@@ -59,11 +59,11 @@
                             </form>
                         @endif
                         @if(auth()->user()->image != NULL)
-                            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <div style="display: width:100%; flex; flex-direction: column; justify-content: center; align-items: center;">
                                 <h4 style="margin-bottom:0;">{{ ucwords(auth()->user()->firstname) }} {{ ucwords(auth()->user()->lastname) }}</h4>
                                 <h5 style="margin-top:9px;">{{ $appNum }}</h5>
                                 @can('hasSubmitted')
-                                    <div class="row" style="display:flex; justify-content:flex-start;">
+                                    <div class="row printBtns">
                                         <a target="blank" href="{{ route('applicationForm') }}" style="margin-right:10px;" class="btn green darken-3 waves-effect waves-light"><i class="material-icons left">print</i>Application Form</a>
                                         <a href="{{ route('refereeForm') }}" style="margin-right:10px;" class="btn green darken-3 waves-effect waves-light"><i class="material-icons left">print</i> Refferee Form</a>
                                         <button class="emailUs btn blue darken-3 waves-effect waves-light"><i class="material-icons left">email</i>E-mail Us</button>
