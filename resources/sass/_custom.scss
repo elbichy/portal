@@ -819,6 +819,12 @@ nav {
     html,
     body {
         height: auto;
+        background-image: url('/storage/bg.jpg');
+        background-color: #cccccc;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
     }
     .sidenav-overlay {
         z-index: 1;
@@ -867,9 +873,14 @@ nav {
             margin-bottom: 0px!important;
             .container {
                 div {
+                    h4 {
+                        text-align: center;
+                        font-size: 28px;
+                    }
                     p {
                         padding: 10px 0;
-                        font-size: 16px;
+                        font-size: 18px;
+                        text-align: justify;
                     }
                 }
                 div:nth-child(2) {
@@ -907,64 +918,71 @@ nav {
             }
         }
         #formArea {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             min-height: 100vh;
             padding: 74px 0 32px 0;
-            .container {
-                div {
-                    p {
-                        margin-bottom: 20px;
-                    }
-                    #register_form>label,
-                    #signin_form>label {
-                        color: #666;
+            div {
+                p {
+                    margin-bottom: 20px;
+                }
+                #register_form>label,
+                #signin_form>label {
+                    color: #666;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    font-size: 1.2rem;
+                    cursor: text;
+                    -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
+                    transition: color .2s ease-out, -webkit-transform .2s ease-out;
+                    transition: transform .2s ease-out, color .2s ease-out;
+                    transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+                    -webkit-transform-origin: 0% 100%;
+                    transform-origin: 0% 100%;
+                    text-align: initial;
+                    -webkit-transform: translateY(12px);
+                    transform: translateY(12px);
+                }
+                #regButt,
+                #loginButt {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    height: 54px;
+                    line-height: 54px;
+                    font-size: 15px;
+                    margin-top: 12px;
+                }
+                #signincard {
+                    padding: 30px 0 10px 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    .progress {
                         position: absolute;
                         top: 0;
-                        left: 0;
-                        font-size: 1.2rem;
-                        cursor: text;
-                        -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
-                        transition: color .2s ease-out, -webkit-transform .2s ease-out;
-                        transition: transform .2s ease-out, color .2s ease-out;
-                        transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
-                        -webkit-transform-origin: 0% 100%;
-                        transform-origin: 0% 100%;
-                        text-align: initial;
-                        -webkit-transform: translateY(12px);
-                        transform: translateY(12px);
+                        margin: 0;
+                        display: none;
                     }
-                    #regButt,
-                    #loginButt {
-                        width: 100%;
-                        display: flex;
-                        justify-content: center;
-                        height: 54px;
-                        line-height: 54px;
-                        font-size: 15px;
-                    }
-                    #signincard {
-                        padding: 30px 0 10px 0;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        position: relative;
-                        .progress {
-                            position: absolute;
-                            top: 0;
-                            margin: 0;
-                            display: none;
-                        }
-                        #signin_form {
-                            width: 85%;
-                        }
+                    #signin_form {
+                        width: 85%;
                     }
                 }
-                .new {
-                    padding-right: 0px;
+            }
+            .new {
+                p {
+                    padding: 0 6px;
+                    font-size: 16px;
                 }
-                .existing {
-                    margin-top: 50px;
+            }
+            .existing {
+                margin-top: 50px;
+                padding: 0;
+                p {
+                    padding: 0 6px;
+                    font-size: 16px;
                 }
             }
         }

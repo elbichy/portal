@@ -886,6 +886,12 @@ nav .logOutBtn a i {
   html,
   body {
     height: auto;
+    background-image: url("/storage/bg.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
   }
 
   .sidenav-overlay {
@@ -948,9 +954,15 @@ nav .logOutBtn a i {
             flex-direction: column-reverse;
   }
 
+  .homeContentWrap .slider-area .container div h4 {
+    text-align: center;
+    font-size: 28px;
+  }
+
   .homeContentWrap .slider-area .container div p {
     padding: 10px 0;
-    font-size: 16px;
+    font-size: 18px;
+    text-align: justify;
   }
 
   .homeContentWrap .slider-area .container div:nth-child(2) {
@@ -998,17 +1010,17 @@ nav .logOutBtn a i {
   }
 
   .homeContentWrap #formArea {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     min-height: 100vh;
     padding: 74px 0 32px 0;
   }
 
-  .homeContentWrap #formArea .container div p {
+  .homeContentWrap #formArea div p {
     margin-bottom: 20px;
   }
 
-  .homeContentWrap #formArea .container div #register_form > label,
-  .homeContentWrap #formArea .container div #signin_form > label {
+  .homeContentWrap #formArea div #register_form > label,
+  .homeContentWrap #formArea div #signin_form > label {
     color: #666;
     position: absolute;
     top: 0;
@@ -1026,8 +1038,8 @@ nav .logOutBtn a i {
     transform: translateY(12px);
   }
 
-  .homeContentWrap #formArea .container div #regButt,
-  .homeContentWrap #formArea .container div #loginButt {
+  .homeContentWrap #formArea div #regButt,
+  .homeContentWrap #formArea div #loginButt {
     width: 100%;
     display: -webkit-box;
     display: flex;
@@ -1036,9 +1048,10 @@ nav .logOutBtn a i {
     height: 54px;
     line-height: 54px;
     font-size: 15px;
+    margin-top: 12px;
   }
 
-  .homeContentWrap #formArea .container div #signincard {
+  .homeContentWrap #formArea div #signincard {
     padding: 30px 0 10px 0;
     display: -webkit-box;
     display: flex;
@@ -1052,23 +1065,30 @@ nav .logOutBtn a i {
     position: relative;
   }
 
-  .homeContentWrap #formArea .container div #signincard .progress {
+  .homeContentWrap #formArea div #signincard .progress {
     position: absolute;
     top: 0;
     margin: 0;
     display: none;
   }
 
-  .homeContentWrap #formArea .container div #signincard #signin_form {
+  .homeContentWrap #formArea div #signincard #signin_form {
     width: 85%;
   }
 
-  .homeContentWrap #formArea .container .new {
-    padding-right: 0px;
+  .homeContentWrap #formArea .new p {
+    padding: 0 6px;
+    font-size: 16px;
   }
 
-  .homeContentWrap #formArea .container .existing {
+  .homeContentWrap #formArea .existing {
     margin-top: 50px;
+    padding: 0;
+  }
+
+  .homeContentWrap #formArea .existing p {
+    padding: 0 6px;
+    font-size: 16px;
   }
 
   .homeContentWrap .instruction {

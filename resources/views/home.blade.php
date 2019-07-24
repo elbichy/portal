@@ -29,7 +29,7 @@
 	</div>
 	<!-- FORM AREA GOES HERE -->
 	<div id="formArea">
-		<div class="container row">
+		<div class="row">
 			<!-- NEW APPLICANT -->
 			<div class="new col s12 m6 l7 black-text">
 				<h5 class="center-align">NEW APPLICANT</h5>
@@ -101,7 +101,7 @@
 						@endif
 						<label for="confirm_password">Confirm Password</label>
 					</div>
-					<div class="col s12">
+					<div class="col s12" style="display: flex; flex-direction: column; align-items: center;">
 						<div class="left">
 							@if ($errors->has('g-recaptcha-response'))
 								<span class="helper-text red-text">
@@ -114,7 +114,7 @@
 						<button id="regButt" class="btn right waves-effect light-blue darken-3 waves-light" type="submit">Register
 							<i class="material-icons right">send</i>
 						</button>
-						<div class="col s4 right">
+						<div class="col s4 right" style="display: flex; width: 100%; justify-content: center;">
 							<div class="preloader-wrapper small active right">
 								<div class="spinner-layer spinner-blue-only">
 									<div class="circle-clipper left">
@@ -136,7 +136,7 @@
 				<h5 class="center-align">APPLICANT LOGIN</h5>
 				<p class="center-align">Have you registered and verified your account? enter your login details
 				to continue with your application.</p>
-				<div class="card col s12" id="signincard">
+				<div class="col white s12" id="signincard">
 					<div class="progress">
 						<div class="indeterminate"></div>
 					</div>
@@ -157,7 +157,7 @@
 							<input id="login_password" name="password" type="password" class="" required>
 							<label for="login_password">Password</label>
 						</div>
-						<div class="col s12">
+						<div class="col s12" style="margin: 0; padding: 0">
 							@if ($errors->has('g-recaptcha-response'))
 								<span class="helper-text red-text">
 									<strong>{{ $errors->first('g-recaptcha-response') }}</strong>
@@ -167,7 +167,7 @@
 						</div>
 						
 						<div class="row">
-							<div class="input-field col s12 l6">
+							<div class="input-field col s12 l6" style="display: flex; justify-content: center;">
 								<p style="margin:0;">
 									<label>
 										<input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}/>
