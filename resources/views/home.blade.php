@@ -35,7 +35,7 @@
 				<h5 class="center-align">NEW APPLICANT</h5>
 				<p class="center-align">Are you a new applicant? fill the form below to start your application process.</p>
 
-				<form method="POST" action="{{ route('register') }}" name="register_form" id="register_form">
+				<form method="POST" action="{{ route('register') }}" name="register_form" id="register_form" class="left white register_form">
 					@csrf
 					<div class="col s12 l6">
 						<label>Select Cadre</label>
@@ -204,7 +204,10 @@
 
 				<ul class="collapsible">
 					<li>
-					<div class="collapsible-header h6"><b>1. AVAILABLE POSITIONS/CATEGORIES</b></div>
+					<div class="collapsible-header h6">
+						<b>AVAILABLE POSITIONS/CATEGORIES</b>
+						<i class="material-icons right">arrow_drop_down</i>
+					</div>
 					<div class="collapsible-body">
 						<h6>CATEGORY A: INSPECTORATE CADRE</h6>
 						<p>
@@ -235,7 +238,10 @@
 					</div>
 					</li>
 					<li>
-					<div class="collapsible-header"><b>2. METHOD OF APPLICATION</b></div>
+					<div class="collapsible-header">
+						<b>METHOD OF APPLICATION</b>
+						<i class="material-icons right">arrow_drop_down</i>
+					</div>
 					<div class="collapsible-body">
 						<p>
 						a. Applications must be online. Candidates are expected to register an account, verify account, then login and fill the application form.
@@ -250,7 +256,10 @@
 					</div>
 					</li>
 					<li>
-					<div class="collapsible-header"><b>3. SUBMISSION OF APPLICATIONS</b></div>
+					<div class="collapsible-header">
+						<b>SUBMISSION OF APPLICATIONS</b>
+						<i class="material-icons right">arrow_drop_down</i>
+					</div>
 					<div class="collapsible-body">
 						<p>
 							Applications must be submitted online within six (6) weeks from the date of publication.
@@ -258,7 +267,10 @@
 					</div>
 					</li>
 					<li>
-					<div class="collapsible-header"><b>4. STATUTORY REQUIREMENTS FOR RECRUITMENT</b></div>
+					<div class="collapsible-header">
+						<b>STATUTORY REQUIREMENTS FOR RECRUITMENT</b>
+						<i class="material-icons right">arrow_drop_down</i>
+					</div>
 					<div class="collapsible-body">
 						<p>
 						i. Applicants must be Nigerian by birth;<br>
@@ -284,7 +296,10 @@
 					</div>
 					</li>
 					<li>
-					<div class="collapsible-header"><b>5. APPLICATION IS FREE!</b></div>
+					<div class="collapsible-header">
+						<b>APPLICATION IS FREE!</b>
+						<i class="material-icons right">arrow_drop_down</i>
+					</div>
 					<div class="collapsible-body">
 						<p>
 						CANDIDATES SHOULD NOTE THAT THIS APPLICATION IS ABSOLUTELY FREE!.
@@ -292,7 +307,10 @@
 					</div>
 					</li>
 					<li>
-					<div class="collapsible-header"><b>6. CLOSING DATE</b></div>
+					<div class="collapsible-header">
+						<b>CLOSING DATE</b>
+						<i class="material-icons right">arrow_drop_down</i>
+					</div>
 					<div class="collapsible-body">
 						<p>
 						All Applications are expected to be completed and submitted within six weeks from the date of this publication.<br /><br />

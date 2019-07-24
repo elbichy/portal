@@ -255,11 +255,15 @@ nav .logOutBtn a i {
   width: 85%;
 }
 
-.homeContentWrap #formArea .container .new {
+.homeContentWrap #formArea .new {
   padding-right: 40px;
 }
 
-.homeContentWrap #formArea .container .existing {
+.homeContentWrap #formArea .new .register_form {
+  padding: 20px 10px;
+}
+
+.homeContentWrap #formArea .existing {
   margin-top: 0px;
 }
 
@@ -272,9 +276,19 @@ nav .logOutBtn a i {
   display: block;
 }
 
+.homeContentWrap #guide p {
+  font-size: 16px;
+  margin: 20px 0;
+  text-align: justify;
+}
+
 .homeContentWrap .collapsible {
   border: none;
   box-shadow: none;
+}
+
+.homeContentWrap .collapsible li {
+  margin-bottom: 6px !important;
 }
 
 .homeContentWrap .active {
@@ -282,9 +296,13 @@ nav .logOutBtn a i {
 }
 
 .homeContentWrap .collapsible-header {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.1);
   border-bottom: 0px solid #ddd;
   color: #fff;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
 }
 
 .homeContentWrap .collapsible-body {
@@ -1138,7 +1156,7 @@ nav .logOutBtn a i {
 
   .homeContentWrap .instruction {
     min-height: 100vh;
-    padding-top: 74px;
+    padding-top: 20px;
   }
 
   .homeContentWrap #guide {
@@ -1150,14 +1168,22 @@ nav .logOutBtn a i {
     box-shadow: none;
   }
 
+  .homeContentWrap .collapsible li {
+    margin-bottom: 6px !important;
+  }
+
   .homeContentWrap .active {
     border: none;
   }
 
   .homeContentWrap .collapsible-header {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.1);
     border-bottom: 0px solid #ddd;
     color: #fff;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
   }
 
   .homeContentWrap .collapsible-body {
