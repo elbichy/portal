@@ -262,7 +262,7 @@ nav {
                 }
             }
             .new {
-                padding-right: 60px;
+                padding-right: 40px;
             }
             .existing {
                 margin-top: 0px;
@@ -293,6 +293,11 @@ nav {
         color: #fff;
         border: none;
     }
+}
+
+.footer-copyright {
+    padding: 10px;
+    background: var(--primary-bg-dark);
 }
 
 .homeContentContainer {
@@ -919,6 +924,11 @@ nav {
         }
         #formArea {
             background: rgba(255, 255, 255, 0.9);
+            .container {
+                margin: 0 auto;
+                max-width: 1280px;
+                width: 100%;
+            }
             min-height: 100vh;
             padding: 74px 0 32px 0;
             div {
@@ -967,18 +977,33 @@ nav {
                         display: none;
                     }
                     #signin_form {
-                        width: 85%;
+                        width: 90%;
                     }
                 }
             }
             .new {
+                padding: 0px!important;
                 p {
                     padding: 0 6px;
                     font-size: 16px;
                 }
+                form {
+                    float: left;
+                    padding: 10px;
+                    .regFormLastRow {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .regBtnSpinner {
+                            display: flex;
+                            width: 100%;
+                            justify-content: center;
+                        }
+                    }
+                }
             }
             .existing {
-                margin-top: 50px;
+                margin-top: 50px!important;
                 padding: 0;
                 p {
                     padding: 0 6px;

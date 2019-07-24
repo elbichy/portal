@@ -163,7 +163,7 @@
     @yield('content')
     
     <!-- FOOTER AREA -->
-    <div class="footer-copyright light-blue darken-4">
+    <div class="footer-copyright">
       <div class="container white-text" style="padding: 5px 0;">
           &copy 2018 ICT & Cybersecurity <a class="grey-text text-lighten-4" href="http://www.nscdc.gov.ng">NSCDC</a>
       </div>

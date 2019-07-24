@@ -29,7 +29,7 @@
 	</div>
 	<!-- FORM AREA GOES HERE -->
 	<div id="formArea">
-		<div class="row">
+		<div class="container row">
 			<!-- NEW APPLICANT -->
 			<div class="new col s12 m6 l7 black-text">
 				<h5 class="center-align">NEW APPLICANT</h5>
@@ -101,7 +101,7 @@
 						@endif
 						<label for="confirm_password">Confirm Password</label>
 					</div>
-					<div class="col s12" style="display: flex; flex-direction: column; align-items: center;">
+					<div class="col s12 regFormLastRow" >
 						<div class="left">
 							@if ($errors->has('g-recaptcha-response'))
 								<span class="helper-text red-text">
@@ -114,7 +114,7 @@
 						<button id="regButt" class="btn right waves-effect light-blue darken-3 waves-light" type="submit">Register
 							<i class="material-icons right">send</i>
 						</button>
-						<div class="col s4 right" style="display: flex; width: 100%; justify-content: center;">
+						<div class="col s4 right regBtnSpinner">
 							<div class="preloader-wrapper small active right">
 								<div class="spinner-layer spinner-blue-only">
 									<div class="circle-clipper left">

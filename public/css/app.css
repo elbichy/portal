@@ -256,7 +256,7 @@ nav .logOutBtn a i {
 }
 
 .homeContentWrap #formArea .container .new {
-  padding-right: 60px;
+  padding-right: 40px;
 }
 
 .homeContentWrap #formArea .container .existing {
@@ -291,6 +291,11 @@ nav .logOutBtn a i {
   background: transparent;
   color: #fff;
   border: none;
+}
+
+.footer-copyright {
+  padding: 10px;
+  background: var(--primary-bg-dark);
 }
 
 .homeContentContainer {
@@ -1015,6 +1020,12 @@ nav .logOutBtn a i {
     padding: 74px 0 32px 0;
   }
 
+  .homeContentWrap #formArea .container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+  }
+
   .homeContentWrap #formArea div p {
     margin-bottom: 20px;
   }
@@ -1073,7 +1084,11 @@ nav .logOutBtn a i {
   }
 
   .homeContentWrap #formArea div #signincard #signin_form {
-    width: 85%;
+    width: 90%;
+  }
+
+  .homeContentWrap #formArea .new {
+    padding: 0px !important;
   }
 
   .homeContentWrap #formArea .new p {
@@ -1081,8 +1096,31 @@ nav .logOutBtn a i {
     font-size: 16px;
   }
 
+  .homeContentWrap #formArea .new form {
+    float: left;
+    padding: 10px;
+  }
+
+  .homeContentWrap #formArea .new form .regFormLastRow {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-align: center;
+            align-items: center;
+  }
+
+  .homeContentWrap #formArea .new form .regFormLastRow .regBtnSpinner {
+    display: -webkit-box;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+
   .homeContentWrap #formArea .existing {
-    margin-top: 50px;
+    margin-top: 50px !important;
     padding: 0;
   }
 
