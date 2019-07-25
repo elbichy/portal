@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "56bcba503c55a8760c1cc22c9b8e8f04",
+    "content-hash": "ce1b1a9947ef01c14d6b1f5772bb0950",
     "packages": [
+        {
+            "name": "albertcht/invisible-recaptcha",
+            "version": "v1.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/albertcht/invisible-recaptcha.git",
+                "reference": "7aae21d07ef16ca14a7d0ec5b06472e2076fedef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/albertcht/invisible-recaptcha/zipball/7aae21d07ef16ca14a7d0ec5b06472e2076fedef",
+                "reference": "7aae21d07ef16ca14a7d0ec5b06472e2076fedef",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "illuminate/support": "^5.0",
+                "php": "^5.6.4 || ^7.0"
+            },
+            "require-dev": {
+                "illuminate/view": "^5.0",
+                "phpunit/phpunit": "^6.1|^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "AlbertCht\\InvisibleReCaptcha\\InvisibleReCaptchaServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AlbertCht\\InvisibleReCaptcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Albert Chen",
+                    "homepage": "https://www.albert-chen.com"
+                }
+            ],
+            "description": "Invisible reCAPTCHA For Laravel.",
+            "keywords": [
+                "captcha",
+                "invisible",
+                "invisible-recaptcha",
+                "laravel",
+                "laravel5",
+                "no-captcha",
+                "php",
+                "recaptcha"
+            ],
+            "time": "2019-06-13T12:23:02+00:00"
+        },
         {
             "name": "aws/aws-sdk-php",
             "version": "3.107.4",
@@ -147,25 +206,25 @@
         },
         {
             "name": "biscolab/laravel-recaptcha",
-            "version": "v3.0.0",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/biscolab/laravel-recaptcha.git",
-                "reference": "f97b791b6fce17307b426f7121c85cb75c152fda"
+                "reference": "abe093d79ba12589f7b086d89e452a9a2821fb5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/biscolab/laravel-recaptcha/zipball/f97b791b6fce17307b426f7121c85cb75c152fda",
-                "reference": "f97b791b6fce17307b426f7121c85cb75c152fda",
+                "url": "https://api.github.com/repos/biscolab/laravel-recaptcha/zipball/abe093d79ba12589f7b086d89e452a9a2821fb5a",
+                "reference": "abe093d79ba12589f7b086d89e452a9a2821fb5a",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^5.5",
-                "php": "^7.1"
+                "laravel/framework": "5.*",
+                "php": ">=5.5.9|7.*"
             },
             "require-dev": {
-                "orchestra/testbench": "~3.0",
-                "phpunit/phpunit": "6.*|7.*"
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
             "autoload": {
@@ -186,8 +245,7 @@
                     "email": "boby.belotti@gmail.com"
                 }
             ],
-            "description": "Simple ReCaptcha package for Laravel 5",
-            "time": "2018-09-12T20:27:08+00:00"
+            "time": "2017-11-01T00:05:43+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

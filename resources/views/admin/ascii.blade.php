@@ -99,7 +99,7 @@
                         });
                     });
                 },
-                order: [[2, 'asc']]
+                order: [[2, 'desc']]
             });
             $('.dataTables_length > label > select').addClass('browser-default');
         });

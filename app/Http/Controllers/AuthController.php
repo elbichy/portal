@@ -13,12 +13,12 @@ class AuthController extends Controller
         $errors = new MessageBag; // initiate MessageBag
 
         $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required|min:6',
-            'g-recaptcha-response' => 'recaptcha',
+            'loginEmail' => 'required|email',
+            'loginPassword' => 'required|min:6',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
     
-        if (\Auth::attempt(['email' => $request->email, 'password' => $request->password],  $request->has('remember'))){
+        if (\Auth::attempt(['email' => $request->loginEmail, 'password' => $request->loginPassword],  $request->has('remember'))){
             return redirect()->intended('applicant');
         }
 

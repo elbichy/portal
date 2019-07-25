@@ -30,6 +30,9 @@ class AuthServiceProvider extends ServiceProvider
         $gate->define('isAdmin', function($user){
             return $user->isAdmin == 1;
         });
+        $gate->define('isApplicant', function($user){
+            return $user->isAdmin == 0;
+        });
         $gate->define('sup', function($user){
             return $user->cadre_id == 1;
         });

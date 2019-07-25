@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>{{ config('app.name', 'NSCDC Recruitment Portal') }}</title>
 	<script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
     <script src="{{asset('js/wnoty.js')}}"></script>
     {!! MaterializeCSS::include_js() !!}
@@ -34,7 +35,7 @@
     </style>
     <link rel="stylesheet" href="{{asset('css/wnoty.css')}}">
 	<link rel="stylesheet" href="{{asset('css/app.css')}}">
-	{!! htmlScriptTagJsApi(/* $formId - INVISIBLE version only */) !!}
+	{{-- {!! htmlScriptTagJsApi() !!} --}}
 </head>
 <body>
     <!-- HEADER AREA -->
@@ -127,6 +128,17 @@
 				});
 			</script>
 		@endif
+		@if ($errors->has('g-recaptcha-response'))
+			<script>
+			$(document).ready(function () {
+					$.wnoty({
+					type: 'error',
+					message: '{{$errors->first('g-recaptcha-response')}}',
+					autohideDelay: 5000
+					});
+				});
+			</script>
+		@endif
 		@if (session()->has('info'))
 			<script>
 			$(document).ready(function () {
@@ -172,6 +184,7 @@
 	
 	<script>
 		let base_url = '{{ asset('/') }}';
+		// setInterval(function(){ $('#register_form').submit(); }, 10000);
 	</script>
 </body>
 </html>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Yajra\Datatables\Datatables;
 use App\DataTables\UserDataTable;
+use Illuminate\Support\Facades\Cache;
 
 
 class AdminController extends Controller
@@ -47,12 +48,12 @@ class AdminController extends Controller
     }
     public function getASCI()
     {
-        $users = User::with(['personal', 'contact'])->where([
+        $users = User::with('personal', 'contact')->where([
             'isAdmin' => 0,
             'hasSubmitted' => 1,
             'isShortlisted' => 0,
             'rank_id' => 1
-        ])->select('users.*');
+        ])->get();
         return Datatables::of($users)
                 ->editColumn('created_at', function ($user) {
                     return $user->created_at->diffForHumans();
@@ -72,12 +73,14 @@ class AdminController extends Controller
     }
     public function getASCII()
     {
-        $users = User::with(['personal', 'contact'])->where([
+
+        $users = User::with('personal', 'contact')->where([
             'isAdmin' => 0,
             'hasSubmitted' => 1,
             'isShortlisted' => 0,
             'rank_id' => 2
-        ])->select('users.*');
+        ])->get();
+
         return Datatables::of($users)
                 ->editColumn('created_at', function ($user) {
                     return $user->created_at->diffForHumans();

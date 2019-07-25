@@ -60,7 +60,7 @@ class RegisterController extends Controller
             'phone' => ['required', 'max:11', 'min:11', 'unique:users'],
             'cadre' => ['required'],
             'rank' => ['required'],
-            'g-recaptcha-response' => 'recaptcha',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
     }
 

@@ -23,7 +23,7 @@
 		<div class="contactSection">
 			<h4 class="container">
 				<i class="medium material-icons">mail_outline</i>
-				<p>SEND FEEDBACK TO: recruitment@nscdc.gov.ng</p>
+				<p>SEND FEEDBACKS TO: recruitment@nscdc.gov.ng</p>
 			</h4>
 		</div>
 	</div>
@@ -35,8 +35,9 @@
 				<h5 class="center-align">NEW APPLICANT</h5>
 				<p class="center-align">Are you a new applicant? fill the form below to start your application process.</p>
 
-				<form method="POST" action="{{ route('register') }}" name="register_form" id="register_form" class="left white register_form">
+				<form method="POST" action="{{ route('register') }}" name="register_form" id="register_form" class="left card register_form">
 					@csrf
+					@captcha('en')
 					<div class="col s12 l6">
 						<label>Select Cadre</label>
 						<select id="cadre" name="cadre" class="browser-default">
@@ -90,27 +91,23 @@
 					</div>
 					<div class="input-field col s12 l6">
 						<input id="password" name="password" type="password" class="" required>
-						<label for="password">Password</label>
-					</div>
-					<div class="input-field col s12 l6">
-						<input id="confirm_password" name="password_confirmation" type="password" class="" required>
 						@if ($errors->has('password'))
 							<span class="helper-text red-text">
 								<strong>{{ $errors->first('password') }}</strong>
 							</span>
 						@endif
+						<label for="password">Password</label>
+					</div>
+					<div class="input-field col s12 l6">
+						<input id="confirm_password" name="password_confirmation" type="password" class="" required>
+						@if ($errors->has('password_confirmation'))
+							<span class="helper-text red-text">
+								<strong>{{ $errors->first('password_confirmation') }}</strong>
+							</span>
+						@endif
 						<label for="confirm_password">Confirm Password</label>
 					</div>
 					<div class="col s12 regFormLastRow" >
-						<div class="left">
-							@if ($errors->has('g-recaptcha-response'))
-								<span class="helper-text red-text">
-									<strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-								</span>
-							@endif
-							{!! htmlFormSnippet() !!}
-						</div>
-
 						<button id="regButt" class="btn right waves-effect light-blue darken-3 waves-light" type="submit">Register
 							<i class="material-icons right">send</i>
 						</button>
@@ -136,15 +133,16 @@
 				<h5 class="center-align">APPLICANT LOGIN</h5>
 				<p class="center-align">Have you registered and verified your account? enter your login details
 				to continue with your application.</p>
-				<div class="col white s12" id="signincard">
+				<div class="card col s12" id="signincard">
 					<div class="progress">
 						<div class="indeterminate"></div>
 					</div>
 					<form method="POST" action="{{ route('login') }}" name='signin_form' id='signin_form'>
 						@csrf
+						@captcha('en')
 						<div class="input-field col s12">
 							<i class="material-icons prefix">person</i>
-							<input id="login_email" name="email" type="email" class="" required>
+							<input id="login_email" name="loginEmail" type="email" class="">
 							@if ($errors->login->has('details'))
 								<span class="helper-text red-text">
 									<strong>{{ $errors->login->first('details') }}</strong>
@@ -154,16 +152,8 @@
 						</div>
 						<div class="input-field col s12">
 							<i class="material-icons prefix">vpn_key</i>
-							<input id="login_password" name="password" type="password" class="" required>
+							<input id="login_password" name="loginPassword" type="password" class="">
 							<label for="login_password">Password</label>
-						</div>
-						<div class="col s12" style="margin: 0; padding: 0">
-							@if ($errors->has('g-recaptcha-response'))
-								<span class="helper-text red-text">
-									<strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-								</span>
-							@endif
-							{!! htmlFormSnippet() !!}
 						</div>
 						
 						<div class="row">

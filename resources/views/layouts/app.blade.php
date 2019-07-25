@@ -9,6 +9,7 @@
     </title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
     <script src="{{asset('js/wnoty.js')}}"></script>
     {!! MaterializeCSS::include_js() !!}
@@ -100,7 +101,7 @@
                         <a href="#email"><span class="white-text email">Recruitment portal</span></a>
                     </div>
                 </li>
-            @cannot('isAdmin')
+            @can('isApplicant')
                 <li class="{{(request()->segment(1) == 'applicant' && request()->segment(2) == NULL) ? 'active' : ''}}">
                     <a href="/applicant"><i class="material-icons">dashboard</i>DASHBOARD</a>
                 </li>
@@ -162,7 +163,7 @@
                 <li class="{{(request()->segment(2) == 'review') ? 'active' : ''}}">
                     <a href="/applicant/review"><i class="material-icons">playlist_add_check</i>REVIEW & SUBMIT</a>
                 </li>
-            @endcannot
+            @endcan
 
 
             {{-- ADMIN SIDENAV HERE --}}

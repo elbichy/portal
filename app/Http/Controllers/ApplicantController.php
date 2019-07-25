@@ -29,15 +29,15 @@ class ApplicantController extends Controller
             return redirect()->route('adminDashboard');
         }
         
-        if(auth()->user()->contact != NULL){
-            $state = State::find(auth()->user()->contact->soo)->state_name;
-            $state = substr($state, 0, 3);
-            $state = strtoupper($state);
-        }else{
-            $state = 'NA';
-        }
-        $appNum = 'NSCDC/REC/2019/'.auth()->user()->rank->acronym.'/'.$state.'/'.auth()->user()->id;
-        return view('dashboard.dashboard')->with('appNum', $appNum);
+        // if(auth()->user()->contact != NULL){
+        //     $state = State::find(auth()->user()->contact->soo)->state_name;
+        //     $state = substr($state, 0, 3);
+        //     $state = strtoupper($state);
+        // }else{
+        // }
+        // $state = 'NA';
+        // $appNum = 'NSCDC/REC/2019/'.auth()->user()->rank->acronym.'/'.$state.'/'.auth()->user()->id;
+        return view('dashboard.dashboard');
     }
     
     

@@ -61,7 +61,7 @@
                         @if(auth()->user()->image != NULL)
                             <div style="display: width:100%; flex; flex-direction: column; justify-content: center; align-items: center;">
                                 <h4 style="margin-bottom:0;">{{ ucwords(auth()->user()->firstname) }} {{ ucwords(auth()->user()->lastname) }}</h4>
-                                <h5 style="margin-top:9px;">{{ $appNum }}</h5>
+                                <h5 style="margin-top:9px;">{{ auth()->user()->appNum != NULL ? auth()->user()->appNum : 'NSCDC/REC/2019/'.auth()->user()->id }}</h5>
                                 @can('hasSubmitted')
                                     <div class="row printBtns">
                                         <a target="blank" href="{{ route('applicationForm') }}" style="margin-right:10px;" class="btn green darken-3 waves-effect waves-light"><i class="material-icons left">print</i>Application Form</a>
