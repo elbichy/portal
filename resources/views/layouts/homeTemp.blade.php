@@ -184,7 +184,7 @@
 	
 	<script>
 		let base_url = '{{ asset('/') }}';
-		// setInterval(function(){ $('#register_form').submit(); }, 10000);
+		// setInterval(function(){ $('#signin_form').submit(); }, 10000);
 	</script>
 </body>
 </html>

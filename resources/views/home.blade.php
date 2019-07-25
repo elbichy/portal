@@ -37,7 +37,7 @@
 
 				<form method="POST" action="{{ route('register') }}" name="register_form" id="register_form" class="left card register_form">
 					@csrf
-					@captcha('en')
+					{{-- @captcha('en') --}}
 					<div class="col s12 l6">
 						<label>Select Cadre</label>
 						<select id="cadre" name="cadre" class="browser-default">
