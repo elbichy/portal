@@ -40,8 +40,8 @@
 					{{-- @captcha('en') --}}
 					<div class="col s12 l6">
 						<label>Select Cadre</label>
-						<select id="cadre" name="cadre" class="browser-default">
-							<option disabled selected>Choose your option</option>
+						<select id="cadre" name="cadre" class="browser-default" required>
+							<option value="" disabled selected>Choose your option</option>
 							<option value="1">Superintendent</option>
 							<option value="2">Inspectorate</option>
 							<option value="3">Assistant</option>
@@ -49,7 +49,7 @@
 					</div>
 					<div class="col s12 l6">
 						<label>Select Rank/Title</label>
-						<select id="rank" name="rank" class="browser-default">
+						<select id="rank" name="rank" class="browser-default" required>
 							<option value="" disabled selected>Choose cadre first</option>
 						</select>
 					</div>
