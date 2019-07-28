@@ -35,7 +35,7 @@
     </style>
     <link rel="stylesheet" href="{{asset('css/wnoty.css')}}">
 	<link rel="stylesheet" href="{{asset('css/app.css')}}">
-	{{-- {!! htmlScriptTagJsApi() !!} --}}
+	{!! htmlScriptTagJsApi() !!}
 </head>
 <body>
     <!-- HEADER AREA -->

@@ -202,7 +202,7 @@ nav .logOutBtn a i {
 }
 
 .homeContentWrap #formArea {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.4);
   min-height: 100vh;
   padding: 74px 0 32px 0;
 }
@@ -348,6 +348,19 @@ nav .logOutBtn a i {
   -webkit-box-direction: normal;
           flex-direction: column;
   margin-top: 0px;
+}
+
+.homeContentWrap #formArea .existingContainer .existingWrap .existing .capchaWrap {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.homeContentWrap #formArea .existingContainer .existingWrap .existing .input-field {
+  margin-bottom: 14px !important;
 }
 
 .homeContentWrap #formArea .signInUp {
@@ -772,7 +785,6 @@ nav .logOutBtn a i {
 .my-content-wrapper .content-container .sectionWrap .sectionFormWrap #certifyForm .review {
   border: 1px solid #ccc !important;
   padding: 12px !important;
-  max-height: 260px !important;
   overflow-y: auto !important;
 }
 
@@ -1221,6 +1233,15 @@ nav .logOutBtn a i {
 
   .homeContentWrap #formArea .newContainer {
     border-radius: 0;
+    padding: 0 !important;
+  }
+
+  .homeContentWrap #formArea .newContainer .newInfoWrap {
+    width: 85% !important;
+  }
+
+  .homeContentWrap #formArea .newContainer .newInfoWrap p {
+    font-size: 18px;
   }
 
   .homeContentWrap #formArea .newContainer .new {
@@ -1257,6 +1278,15 @@ nav .logOutBtn a i {
 
   .homeContentWrap #formArea .existingContainer {
     border-radius: 0;
+    padding: 0 !important;
+  }
+
+  .homeContentWrap #formArea .existingContainer .existingInfoWrap {
+    width: 85% !important;
+  }
+
+  .homeContentWrap #formArea .existingContainer .existingInfoWrap p {
+    font-size: 18px;
   }
 
   .homeContentWrap #formArea .existingContainer .existing {
@@ -1539,7 +1569,6 @@ nav .logOutBtn a i {
   .my-content-wrapper .content-container .sectionWrap .sectionFormWrap #certifyForm .review {
     border: 1px solid #ccc !important;
     padding: 12px !important;
-    max-height: 260px !important;
     overflow-y: auto !important;
   }
 

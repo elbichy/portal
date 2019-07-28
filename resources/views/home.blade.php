@@ -169,7 +169,6 @@
 							</div>
 							<form method="POST" action="{{ route('login') }}" name='signin_form' id='signin_form'>
 								@csrf
-								@captcha('en')
 								<div class="input-field col s12">
 									<i class="material-icons prefix">person</i>
 									<input id="login_email" name="loginEmail" type="email" class="">
@@ -185,7 +184,10 @@
 									<input id="login_password" name="loginPassword" type="password" class="">
 									<label for="login_password">Password</label>
 								</div>
-								
+								<div class="capchaWrap col s12">
+										{!! htmlFormSnippet() !!}
+								</div>
+
 								<div class="row">
 									<div class="input-field col s12 l6" style="display: flex; justify-content: center;">
 										<p style="margin:0;">

@@ -218,7 +218,7 @@ nav {
         }
     }
     #formArea {
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.4);
         min-height: 100vh;
         padding: 74px 0 32px 0;
         .container {
@@ -323,6 +323,16 @@ nav {
                     display: flex;
                     flex-direction: column;
                     margin-top: 0px;
+                    .capchaWrap {
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        justify-content: center;
+                        // border: 2px solid red;
+                    }
+                    .input-field {
+                        margin-bottom: 14px!important;
+                    }
                 }
             }
         }
@@ -672,7 +682,7 @@ nav {
                     .review {
                         border: 1px solid #ccc!important;
                         padding: 12px!important;
-                        max-height: 260px!important;
+                        // max-height: 260px!important;
                         overflow-y: auto!important;
                         .headWrap {
                             border-bottom: 2px solid #039be5;
@@ -1073,6 +1083,13 @@ nav {
             }
             .newContainer {
                 border-radius: 0;
+                padding: 0!important;
+                .newInfoWrap {
+                    width: 85%!important;
+                    p {
+                        font-size: 18px;
+                    }
+                }
                 .new {
                     padding: 0px!important;
                     p {
@@ -1097,6 +1114,13 @@ nav {
             }
             .existingContainer {
                 border-radius: 0;
+                padding: 0!important;
+                .existingInfoWrap {
+                    width: 85%!important;
+                    p {
+                        font-size: 18px;
+                    }
+                }
                 .existing {
                     margin-top: 50px!important;
                     padding: 0;
@@ -1318,7 +1342,7 @@ nav {
                         .review {
                             border: 1px solid #ccc!important;
                             padding: 12px!important;
-                            max-height: 260px!important;
+                            // max-height: 260px!important;
                             overflow-y: auto!important;
                             .headWrap {
                                 border-bottom: 2px solid #039be5;
