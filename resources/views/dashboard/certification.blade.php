@@ -77,7 +77,7 @@
                             <button class="btn waves-effect green darken-1 waves-light center addProfessional" type="submit" name="action"><i class="material-icons right">add</i> Add</button>
                         </div>
                         <div class="input-field col s12 l4">
-                            <a href="{{ route('showExperience') }}" class="btn waves-effect waves-light right professionalSave">Proceed</a>
+                            <a href="{{ route('showExperience') }}" class="btn waves-effect waves-light right proceedBtn">Proceed</a>
                         </div>
                     </form>
                 </div>

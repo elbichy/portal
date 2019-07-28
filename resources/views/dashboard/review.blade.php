@@ -227,7 +227,7 @@
                             </blockquote>
                         </div>
                         <div class="col s12">
-                            <button class="btn green waves-effect waves-light right submitSave">SUBMIT &amp; PRINT</button>
+                            <button class="btn green waves-effect waves-light right submitSave proceedBtn">SUBMIT &amp; PRINT</button>
                         </div>
                     </form>
                 </div>

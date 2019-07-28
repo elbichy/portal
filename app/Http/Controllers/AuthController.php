@@ -15,7 +15,7 @@ class AuthController extends Controller
         $this->validate($request, [
             'loginEmail' => 'required|email',
             'loginPassword' => 'required|min:6',
-            'g-recaptcha-response' => 'required|captcha',
+            // 'g-recaptcha-response' => 'required|captcha',
         ]);
     
         if (\Auth::attempt(['email' => $request->loginEmail, 'password' => $request->loginPassword],  $request->has('remember'))){

@@ -104,7 +104,7 @@
                             <button class="btn waves-effect green darken-1 waves-light center addteriary right" type="submit" name="action"><i class="material-icons right">add</i> ADD</button>
                         </div>
                         <div class="input-field col s12">
-                            <a href="{{ route('showCertification') }}" class="tertiaryProceed btn waves-effect waves-light right tertiarySave" {{ count(auth()->user()->tertiary) == 0 ? 'disabled' : ''}}>PROCEED</a>
+                            <a href="{{ route('showCertification') }}" class="tertiaryProceed btn waves-effect waves-light right tertiarySave proceedBtn" {{ count(auth()->user()->tertiary) == 0 ? 'disabled' : ''}}>PROCEED</a>
                         </div>
                     </form>
                 </div>

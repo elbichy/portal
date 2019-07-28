@@ -164,7 +164,7 @@
                             </div>
                         </div>
                         <div class="row col s12 l12">
-                            <button class="btn waves-effect waves-light right personalSave" type="submit">Save &amp; Proceed</button>
+                            <button class="btn waves-effect waves-light right proceedBtn" type="submit">Save &amp; Proceed</button>
                         </div>
                     </form>
                 </div>

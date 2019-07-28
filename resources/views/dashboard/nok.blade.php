@@ -88,7 +88,7 @@
                             <button class="btn waves-effect waves-light green darken-1 center addNOK" type="submit" name="action"><i class="material-icons right">add</i> ADD</button>
                         </div>
                         <div class="input-field col s12 l4">
-                            <a href="{{ route('showPrimary') }}" class="nokProceed btn waves-effect waves-light right professionalSave" {{ count(auth()->user()->nextOfKin) < 2 ? 'disabled' : ''}}>Proceed</a>
+                            <a href="{{ route('showPrimary') }}" class="nokProceed btn waves-effect waves-light right proceedBtn" {{ count(auth()->user()->nextOfKin) < 2 ? 'disabled' : ''}}>Proceed</a>
                         </div>
                     </form>
                 </div>

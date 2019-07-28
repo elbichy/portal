@@ -98,10 +98,10 @@
                                 @endif
                             </div>
                             <div class="input-field col s12 l3">
-                                <button class="btn waves-effect waves-light green darken-1 center addPri" type="submit" name="action"><i class="material-icons right">add</i> ADD</button>
+                                <button class="btn waves-effect waves-light green darken-1 center addPri proceedBtn" type="submit" name="action"><i class="material-icons right">add</i> ADD</button>
                             </div>
                             <div class="input-field col s12 l3 right">
-                                <a href="{{ route('showSecondary') }}" class="primaryProceed right btn waves-effect waves-light"{{ count(auth()->user()->primary) == 0 ? 'disabled' : ''}}>PROCEED</a>
+                                <a href="{{ route('showSecondary') }}" class="proceedBtn right btn waves-effect waves-light"{{ count(auth()->user()->primary) == 0 ? 'disabled' : ''}}>PROCEED</a>
                             </div>
                         </div>
                     </form>

@@ -174,6 +174,9 @@ $(document).ready(function() {
             });
     });
 
+    $('.proceedBtn').click(function() {
+        $(this).hide('fade');
+    })
 
     // ADD NEW PRIMARY SCHOOL RECORD ASYNC
     $('#priForm').submit(function(e) {
