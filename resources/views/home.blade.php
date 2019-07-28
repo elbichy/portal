@@ -31,151 +31,184 @@
 	<div id="formArea">
 		<div class="container row">
 			<!-- NEW APPLICANT -->
-			<div class="new col s12 m6 l7 black-text">
-				<h5 class="center-align">NEW APPLICANT</h5>
-				<p class="center-align">Are you a new applicant? fill the form below to start your application process.</p>
+			<div class="newContainer col s12 m6 l6">
 
-				<form method="POST" action="{{ route('register') }}" name="register_form" id="register_form" class="left card register_form">
-					@csrf
-					{{-- @captcha('en') --}}
-					<div class="col s12 l6">
-						<label>Select Cadre</label>
-						<select id="cadre" name="cadre" class="browser-default" required>
-							<option value="" disabled selected>Choose your option</option>
-							<option value="1">Superintendent</option>
-							<option value="2">Inspectorate</option>
-							<option value="3">Assistant</option>
-						</select>
-					</div>
-					<div class="col s12 l6">
-						<label>Select Rank/Title</label>
-						<select id="rank" name="rank" class="browser-default" required>
-							<option value="" disabled selected>Choose cadre first</option>
-						</select>
-					</div>
-					<div class="input-field col s12 l6" style="margin-top:30px!important;">
-						<input id="first_name" name="firstname" type="text" class="" required>
-						@if ($errors->has('firstname'))
-							<span class="helper-text red-text">
-								<strong>{{ $errors->first('firstname') }}</strong>
-							</span>
-						@endif
-						<label for="first_name">First Name</label>
-					</div>
-					<div class="input-field col s12 l6" style="margin-top:30px!important;">
-						<input id="last_name" name="lastname" type="text" class="" required>
-						@if ($errors->has('lastname'))
-							<span class="helper-text red-text">
-								<strong>{{ $errors->first('lastname') }}</strong>
-							</span>
-						@endif
-						<label for="last_name">Last Name</label>
-					</div>
-					<div class="input-field col s12 l6 ">
-						<input id="email" name="email" type="email" class="" required>
-						@if ($errors->has('email'))
-							<span class="helper-text red-text">
-								<strong>{{ $errors->first('email') }}</strong>
-							</span>
-						@endif
-						<label for="email">Email</label>
-					</div>
-					<div class="input-field col s12 l6 ">
-						<input id="phone" name="phone" type="number" class="" required>
-						@if ($errors->has('phone'))
-							<span class="helper-text red-text">
-								<strong>{{ $errors->first('phone') }}</strong>
-							</span>
-						@endif
-						<label for="phone">Phone</label>
-					</div>
-					<div class="input-field col s12 l6">
-						<input id="password" name="password" type="password" class="" required>
-						@if ($errors->has('password'))
-							<span class="helper-text red-text">
-								<strong>{{ $errors->first('password') }}</strong>
-							</span>
-						@endif
-						<label for="password">Password</label>
-					</div>
-					<div class="input-field col s12 l6">
-						<input id="confirm_password" name="password_confirmation" type="password" class="" required>
-						@if ($errors->has('password_confirmation'))
-							<span class="helper-text red-text">
-								<strong>{{ $errors->first('password_confirmation') }}</strong>
-							</span>
-						@endif
-						<label for="confirm_password">Confirm Password</label>
-					</div>
-					<div class="col s12 regFormLastRow" >
-						<button id="regButt" class="btn right waves-effect light-blue darken-3 waves-light" type="submit">Register
-							<i class="material-icons right">send</i>
+				<div class="newInfoWrap">
+					<div class="newInfo">
+						<h3 style="font-weight:700;" class="white-text">New Applicant?</h3>
+						<p class="white-text">
+							Are you a new applicant? make sure you read through the application guidelines in order to know the requirements and right vacancy/position for your qualification.
+						</p>
+						<button type="button" class="signInUp">
+							Get Started <i style="margin-left:6px;" class="material-icons">person_add</i>
 						</button>
-						<div class="col s4 right regBtnSpinner">
-							<div class="preloader-wrapper small active right">
-								<div class="spinner-layer spinner-blue-only">
-									<div class="circle-clipper left">
-									<div class="circle"></div>
-									</div><div class="gap-patch">
-									<div class="circle"></div>
-									</div><div class="circle-clipper right">
-									<div class="circle"></div>
+					</div>
+				</div>
+				<div class="newWrap">
+					<div class="new black-text">
+						<h5 class="center-align">Create Account</h5>
+						<p class="center-align">Fill the form below and submit to kick start your application process.</p>
+						<form method="POST" action="{{ route('register') }}" name="register_form" id="register_form" class="left card register_form">
+							@csrf
+							@captcha('en')
+							<div class="col s12 l6">
+								<label>Select Cadre</label>
+								<select id="cadre" name="cadre" class="browser-default" required>
+									<option value="" disabled selected>Choose your option</option>
+									<option value="1">Superintendent</option>
+									<option value="2">Inspectorate</option>
+									<option value="3">Assistant</option>
+								</select>
+							</div>
+							<div class="col s12 l6">
+								<label>Select Rank/Title</label>
+								<select id="rank" name="rank" class="browser-default" required>
+									<option value="" disabled selected>Choose cadre first</option>
+								</select>
+							</div>
+							<div class="input-field col s12 l6" style="margin-top:30px!important;">
+								<input id="first_name" name="firstname" type="text" class="" required>
+								@if ($errors->has('firstname'))
+									<span class="helper-text red-text">
+										<strong>{{ $errors->first('firstname') }}</strong>
+									</span>
+								@endif
+								<label for="first_name">First Name</label>
+							</div>
+							<div class="input-field col s12 l6" style="margin-top:30px!important;">
+								<input id="last_name" name="lastname" type="text" class="" required>
+								@if ($errors->has('lastname'))
+									<span class="helper-text red-text">
+										<strong>{{ $errors->first('lastname') }}</strong>
+									</span>
+								@endif
+								<label for="last_name">Last Name</label>
+							</div>
+							<div class="input-field col s12 l6 ">
+								<input id="email" name="email" type="email" class="" required>
+								@if ($errors->has('email'))
+									<span class="helper-text red-text">
+										<strong>{{ $errors->first('email') }}</strong>
+									</span>
+								@endif
+								<label for="email">Email</label>
+							</div>
+							<div class="input-field col s12 l6 ">
+								<input id="phone" name="phone" type="number" class="" required>
+								@if ($errors->has('phone'))
+									<span class="helper-text red-text">
+										<strong>{{ $errors->first('phone') }}</strong>
+									</span>
+								@endif
+								<label for="phone">Phone</label>
+							</div>
+							<div class="input-field col s12 l6">
+								<input id="password" name="password" type="password" class="" required>
+								@if ($errors->has('password'))
+									<span class="helper-text red-text">
+										<strong>{{ $errors->first('password') }}</strong>
+									</span>
+								@endif
+								<label for="password">Password</label>
+							</div>
+							<div class="input-field col s12 l6">
+								<input id="confirm_password" name="password_confirmation" type="password" class="" required>
+								@if ($errors->has('password_confirmation'))
+									<span class="helper-text red-text">
+										<strong>{{ $errors->first('password_confirmation') }}</strong>
+									</span>
+								@endif
+								<label for="confirm_password">Confirm Password</label>
+							</div>
+							<div class="col s12 regFormLastRow" >
+								<button id="regButt" class="btn right waves-effect light-blue darken-3 waves-light" type="submit">Register
+									<i class="material-icons right">send</i>
+								</button>
+								<div class="col s4 right regBtnSpinner">
+									<div class="preloader-wrapper small active right">
+										<div class="spinner-layer spinner-blue-only">
+											<div class="circle-clipper left">
+											<div class="circle"></div>
+											</div><div class="gap-patch">
+											<div class="circle"></div>
+											</div><div class="circle-clipper right">
+											<div class="circle"></div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</form>
 					</div>
-				</form>
+				</div>
+				
 			</div>
 			
 			<!-- EXISTING APPLICANT -->
-			<div class="existing col s12 m6 l5  black-text">
-				<h5 class="center-align">APPLICANT LOGIN</h5>
-				<p class="center-align">Have you registered and verified your account? enter your login details
-				to continue with your application.</p>
-				<div class="card col s12" id="signincard">
-					<div class="progress">
-						<div class="indeterminate"></div>
+			<div class="existingContainer col s12 m6 l6">
+
+				<div class="existingInfoWrap">
+					<div class="existingInfo">
+						<h3 style="font-weight:700;" class="white-text">Welcome Back!</h3>
+						<p class="white-text">
+							If you have created an account, and you have verified your email address, click the SignIn button below to reveal the SignIn Form.
+						</p>
+						<button type="button" class="signInUp">
+							SIGN IN <i style="margin-left:6px;" class="material-icons">lock_open</i>
+						</button>
 					</div>
-					<form method="POST" action="{{ route('login') }}" name='signin_form' id='signin_form'>
-						@csrf
-						@captcha('en')
-						<div class="input-field col s12">
-							<i class="material-icons prefix">person</i>
-							<input id="login_email" name="loginEmail" type="email" class="">
-							@if ($errors->login->has('details'))
-								<span class="helper-text red-text">
-									<strong>{{ $errors->login->first('details') }}</strong>
-								</span>
-							@endif
-							<label for="login_email">Email</label>
-						</div>
-						<div class="input-field col s12">
-							<i class="material-icons prefix">vpn_key</i>
-							<input id="login_password" name="loginPassword" type="password" class="">
-							<label for="login_password">Password</label>
-						</div>
-						
-						<div class="row">
-							<div class="input-field col s12 l6" style="display: flex; justify-content: center;">
-								<p style="margin:0;">
-									<label>
-										<input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}/>
-										<span>Remember Me</span>
-									</label>
-								</p>
-							</div>
-							<div class="input-field col s12 l6">
-								<button id="loginButt" class="btn waves-effect red darken-1 waves-light right" type="submit" name="action">Login
-									<i class="material-icons right">send</i>
-								</button>
-							</div>
-						</div>
-						<div>
-							<p class='center'>Forgot password? <a href="{{ route('password.request') }}">Reset password</a></p>
-						</div>
-					</form>
 				</div>
+				<div class="existingWrap">
+					<div class="existing black-text">
+						<h5 class="center-align">APPLICANT LOGIN</h5>
+						<p class="center-align">Have you registered and verified your account? enter your login details
+						to continue with your application.</p>
+						<div class="card col s12" id="signincard">
+							<div class="progress">
+								<div class="indeterminate"></div>
+							</div>
+							<form method="POST" action="{{ route('login') }}" name='signin_form' id='signin_form'>
+								@csrf
+								@captcha('en')
+								<div class="input-field col s12">
+									<i class="material-icons prefix">person</i>
+									<input id="login_email" name="loginEmail" type="email" class="">
+									@if ($errors->login->has('details'))
+										<span class="helper-text red-text">
+											<strong>{{ $errors->login->first('details') }}</strong>
+										</span>
+									@endif
+									<label for="login_email">Email</label>
+								</div>
+								<div class="input-field col s12">
+									<i class="material-icons prefix">vpn_key</i>
+									<input id="login_password" name="loginPassword" type="password" class="">
+									<label for="login_password">Password</label>
+								</div>
+								
+								<div class="row">
+									<div class="input-field col s12 l6" style="display: flex; justify-content: center;">
+										<p style="margin:0;">
+											<label>
+												<input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}/>
+												<span>Remember Me</span>
+											</label>
+										</p>
+									</div>
+									<div class="input-field col s12 l6">
+										<button id="loginButt" class="btn waves-effect red darken-1 waves-light right" type="submit" name="action">Login
+											<i class="material-icons right">send</i>
+										</button>
+									</div>
+								</div>
+								<div>
+									<p class='center'>Forgot password? <a href="{{ route('password.request') }}">Reset password</a></p>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>

@@ -54,6 +54,41 @@ $(document).ready(function() {
     });
 
 
+    $('.newInfo > button').click(function() {
+        $('.existingWrap').hide('fade', function() {
+            $('.existingContainer').css({
+                'background': 'linear-gradient(45deg, #164f6b 10%, #039be5 90%)'
+            })
+            $('.existingInfoWrap').show('fade', function() {
+                // This is where i reveal reg form
+                $('.newInfoWrap').hide('fade', function() {
+                    $('.newContainer').css({
+                        'background-image': 'none',
+                        'background': 'white'
+                    })
+                    $('.newWrap').show('fade')
+                })
+            })
+        })
+    });
+
+    $('.existingInfo > button').click(function() {
+        $('.newWrap').hide('fade', function() {
+            $('.newContainer').css({
+                'background': 'linear-gradient(45deg, #164f6b 10%, #039be5 90%)'
+            })
+            $('.newInfoWrap').show('fade', function() {
+                // This is where i reveal reg form
+                $('.existingInfoWrap').hide('fade', function() {
+                    $('.existingContainer').css({
+                        'background-image': 'none',
+                        'background': 'white'
+                    })
+                    $('.existingWrap').show('fade')
+                })
+            })
+        })
+    });
 
     $('#register_form').submit(function() {
         $('#regButt').fadeOut(function() {

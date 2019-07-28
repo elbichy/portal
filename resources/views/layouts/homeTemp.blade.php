@@ -105,7 +105,7 @@
 			</ul>
 		</div>
     </div>
-
+		{{-- LOGIN ERR --}}
 		@if ($errors->login->has('details'))
 			<script>
 			$(document).ready(function () {
@@ -117,28 +117,100 @@
 				});
 			</script>
 		@endif
+
+		{{-- SIGNUP ERR --}}
 		@if (session()->has('error'))
 			<script>
-			$(document).ready(function () {
+				$(document).ready(function () {
 					$.wnoty({
-					type: 'error',
-					message: '{{session('error')}}',
-					autohideDelay: 5000
+						type: 'error',
+						message: '{{session('error')}}',
+						autohideDelay: 8000
 					});
 				});
 			</script>
 		@endif
+		@if ($errors->has('firstname'))
+			<script>
+				$(document).ready(function () {
+					$.wnoty({
+						type: 'error',
+						message: '{{ $errors->first('firstname') }}',
+						autohideDelay: 8000
+					});
+				});
+			</script>
+		@endif
+		@if ($errors->has('lastname'))
+			<script>
+				$(document).ready(function () {
+					$.wnoty({
+						type: 'error',
+						message: '{{ $errors->first('lastname') }}',
+						autohideDelay: 8000
+					});
+				});
+			</script>
+		@endif
+		@if ($errors->has('email'))
+			<script>
+				$(document).ready(function () {
+					$.wnoty({
+						type: 'error',
+						message: '{{ $errors->first('email') }}',
+						autohideDelay: 8000
+					});
+				});
+			</script>
+		@endif
+		@if ($errors->has('phone'))
+			<script>
+				$(document).ready(function () {
+					$.wnoty({
+						type: 'error',
+						message: '{{ $errors->first('phone') }}',
+						autohideDelay: 8000
+					});
+				});
+			</script>
+		@endif
+		@if ($errors->has('password'))
+			<script>
+				$(document).ready(function () {
+					$.wnoty({
+						type: 'error',
+						message: '{{ $errors->first('password') }}',
+						autohideDelay: 8000
+					});
+				});
+			</script>
+		@endif
+		@if ($errors->has('password_confirmation'))
+			<script>
+				$(document).ready(function () {
+					$.wnoty({
+						type: 'error',
+						message: '{{ $errors->first('password_confirmation') }}',
+						autohideDelay: 8000
+					});
+				});
+			</script>
+		@endif
+
+		{{-- RECAPCHA ERR --}}
 		@if ($errors->has('g-recaptcha-response'))
 			<script>
 			$(document).ready(function () {
 					$.wnoty({
 					type: 'error',
 					message: '{{$errors->first('g-recaptcha-response')}}',
-					autohideDelay: 5000
+					autohideDelay: 8000
 					});
 				});
 			</script>
 		@endif
+
+
 		@if (session()->has('info'))
 			<script>
 			$(document).ready(function () {

@@ -255,16 +255,122 @@ nav .logOutBtn a i {
   width: 85%;
 }
 
-.homeContentWrap #formArea .new {
-  padding-right: 40px;
+.homeContentWrap #formArea .newContainer {
+  min-height: 554px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  background: var(--primary-bg-dark);
+  background-image: linear-gradient(45deg, var(--primary-bg-dark) 10%, var(--primary-bg-light) 90%);
+  padding: 0 20px;
+  box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
-.homeContentWrap #formArea .new .register_form {
+.homeContentWrap #formArea .newContainer .newInfoWrap {
+  display: block;
+}
+
+.homeContentWrap #formArea .newContainer .newInfoWrap .newInfo {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.homeContentWrap #formArea .newContainer .newWrap {
+  display: none;
+}
+
+.homeContentWrap #formArea .newContainer .newWrap .new {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.homeContentWrap #formArea .newContainer .newWrap .new .register_form {
   padding: 20px 10px;
 }
 
-.homeContentWrap #formArea .existing {
+.homeContentWrap #formArea .existingContainer {
+  min-height: 554px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding: 0 20px;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  background: white;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.homeContentWrap #formArea .existingContainer .existingInfoWrap {
+  display: none;
+  width: 100%;
+}
+
+.homeContentWrap #formArea .existingContainer .existingInfoWrap .existingInfo {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.homeContentWrap #formArea .existingContainer .existingWrap {
+  display: block;
+}
+
+.homeContentWrap #formArea .existingContainer .existingWrap .existing {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   margin-top: 0px;
+}
+
+.homeContentWrap #formArea .signInUp {
+  padding: 12px;
+  border: 2px solid white;
+  border-radius: 40px;
+  color: white;
+  background: transparent;
+  font-size: 18px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.homeContentWrap #formArea .signInUp:hover {
+  color: var(--primary-bg-dark);
+  background: white;
 }
 
 .homeContentWrap .instruction {
@@ -1041,6 +1147,7 @@ nav .logOutBtn a i {
 
   .homeContentWrap #formArea {
     background: rgba(255, 255, 255, 0.9);
+    padding: 0 !important;
     min-height: 100vh;
     padding: 74px 0 32px 0;
   }
@@ -1144,12 +1251,12 @@ nav .logOutBtn a i {
             justify-content: center;
   }
 
-  .homeContentWrap #formArea .existing {
+  .homeContentWrap #formArea .existingContainer .existing {
     margin-top: 50px !important;
     padding: 0;
   }
 
-  .homeContentWrap #formArea .existing p {
+  .homeContentWrap #formArea .existingContainer .existing p {
     padding: 0 6px;
     font-size: 16px;
   }
