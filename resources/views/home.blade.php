@@ -151,7 +151,7 @@
 					<div class="existingInfo">
 						<h3 style="font-weight:700;" class="white-text">Welcome Back!</h3>
 						<p class="white-text">
-							If you have created an account, and you have verified your email address, click the SignIn button below to reveal the SignIn Form.
+							If you already have an account, and you have verified your email, then click the Sign-In button below to Sign-In to your account and proceed with your application.
 						</p>
 						<button type="button" class="signInUp">
 							SIGN IN <i style="margin-left:6px;" class="material-icons">lock_open</i>
