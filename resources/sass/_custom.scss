@@ -1072,28 +1072,32 @@ nav {
                     }
                 }
             }
-            .new {
-                padding: 0px!important;
-                p {
-                    padding: 0 6px;
-                    font-size: 16px;
-                }
-                form {
-                    float: left;
-                    padding: 10px;
-                    .regFormLastRow {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        .regBtnSpinner {
+            .newContainer {
+                border-radius: 0;
+                .new {
+                    padding: 0px!important;
+                    p {
+                        padding: 0 6px;
+                        font-size: 16px;
+                    }
+                    form {
+                        float: left;
+                        padding: 10px;
+                        .regFormLastRow {
                             display: flex;
-                            width: 100%;
-                            justify-content: center;
+                            flex-direction: column;
+                            align-items: center;
+                            .regBtnSpinner {
+                                display: flex;
+                                width: 100%;
+                                justify-content: center;
+                            }
                         }
                     }
                 }
             }
             .existingContainer {
+                border-radius: 0;
                 .existing {
                     margin-top: 50px!important;
                     padding: 0;

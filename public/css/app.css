@@ -1219,21 +1219,25 @@ nav .logOutBtn a i {
     width: 90%;
   }
 
-  .homeContentWrap #formArea .new {
+  .homeContentWrap #formArea .newContainer {
+    border-radius: 0;
+  }
+
+  .homeContentWrap #formArea .newContainer .new {
     padding: 0px !important;
   }
 
-  .homeContentWrap #formArea .new p {
+  .homeContentWrap #formArea .newContainer .new p {
     padding: 0 6px;
     font-size: 16px;
   }
 
-  .homeContentWrap #formArea .new form {
+  .homeContentWrap #formArea .newContainer .new form {
     float: left;
     padding: 10px;
   }
 
-  .homeContentWrap #formArea .new form .regFormLastRow {
+  .homeContentWrap #formArea .newContainer .new form .regFormLastRow {
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
@@ -1243,12 +1247,16 @@ nav .logOutBtn a i {
             align-items: center;
   }
 
-  .homeContentWrap #formArea .new form .regFormLastRow .regBtnSpinner {
+  .homeContentWrap #formArea .newContainer .new form .regFormLastRow .regBtnSpinner {
     display: -webkit-box;
     display: flex;
     width: 100%;
     -webkit-box-pack: center;
             justify-content: center;
+  }
+
+  .homeContentWrap #formArea .existingContainer {
+    border-radius: 0;
   }
 
   .homeContentWrap #formArea .existingContainer .existing {
